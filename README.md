@@ -1,9 +1,9 @@
 # Glendale Fire Risk Interactive Visualization
 
-## 📌 Overview
+## Overview
 This project visualizes wildfire risk in Glendale, California using GIS data, a weighted risk model, and an interactive Plotly Dash web dashboard. It aims to help city planners, emergency services, and residents understand spatial patterns of fire vulnerability at the building level.
 
-## 👥 Team – STA160 (Team 3)
+## Team – STA160 (Team 3)
 | Name | Major | Role |
 |------|-------|------|
 | Ruhi Aggarwal | Data Science | Risk Model, Integration |
@@ -16,15 +16,15 @@ This project visualizes wildfire risk in Glendale, California using GIS data, a 
 
 ---
 
-## 🎯 Goals & Deliverables
-✅ Interactive **2D Plotly Dash dashboard** showing building-level fire risk  
-✅ Embedded **3D QGIS scene** (terrain, extruded buildings, risk overlay)  
-✅ Full data pipeline documentation & final report  
-✅ Comparison with CalFire Fire Hazard Severity Zones (FHSZ)
+## Goals & Deliverables
+- Interactive **2D Plotly Dash dashboard** showing building-level fire risk  
+- Embedded **3D QGIS scene** (terrain, extruded buildings, risk overlay)  
+- Full data pipeline documentation & final report  
+- Comparison with CalFire Fire Hazard Severity Zones (FHSZ)
 
 ---
 
-## 🗂 Repository Structure
+## Repository Structure
 
 ```
 Glendale-Fire-Risk/
@@ -67,7 +67,7 @@ Glendale-Fire-Risk/
 
 ---
 
-## 💾 Data Sources
+## Data Sources
 | Dataset | Source |
 |---------|--------|
 | Building Footprints | LA County GIS Data Portal |
@@ -80,7 +80,7 @@ All data is public, government-sourced, and contains no personal or identifying 
 
 ---
 
-## ⚙️ Technology Stack
+## Technology Stack
 | Category | Tool |
 |----------|------|
 | GIS Processing | QGIS (Slope, Aspect, Reclassification) |
@@ -92,7 +92,7 @@ All data is public, government-sourced, and contains no personal or identifying 
 
 ---
 
-## 🧮 Fire Risk Modeling
+## Fire Risk Modeling
 A weighted overlay model using:
 - **Slope** (derived from DEM)  
 - **Vegetation / Fuel Type**  
@@ -106,7 +106,7 @@ Weights determined from CalFire research + sensitivity analysis.
 
 ---
 
-## 📅 Timeline
+## Timeline
 | Week | Task |
 |------|------|
 | Week 4 | Download & preprocess GIS data |
@@ -119,7 +119,7 @@ Weights determined from CalFire research + sensitivity analysis.
 
 ---
 
-## 🚀 How to Run the Dash App (Coming Soon)
+## How to Run the Dash App (Coming Soon)
 
 ```bash
 # 1. Clone the repository
@@ -134,10 +134,10 @@ cd dash_app
 python app.py
 ```
 
-📜 License
+## License
 This project uses only public data and is licensed under the MIT License.
 
-📧 Contact
+## Contact
 If you have questions or feedback:
 
 Email: alfdavis.ucdavis.edu (Project Lead)
