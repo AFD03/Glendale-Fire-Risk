@@ -1,0 +1,9 @@
+# requirements.txt
+# Add your Python project dependencies here
+
+# Example dependencies:
+# flask==2.3.3
+# requests==2.31.0
+# numpy==1.26.0
+
+# Replace the above with your actual dependencies
