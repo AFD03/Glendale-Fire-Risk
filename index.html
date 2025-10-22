@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Glendale Fire Risk Interactive Visualization - A GIS-based wildfire risk assessment tool for Glendale, California">
+    <title>Glendale Fire Risk Visualization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #718096;
+            margin-bottom: 30px;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+        
+        .description {
+            color: #4a5568;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        
+        .features {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        
+        .features h2 {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features li {
+            padding: 10px 0;
+            color: #4a5568;
+            font-size: 1rem;
+        }
+        
+        .features li:before {
+            content: "🔥";
+            margin-right: 10px;
+        }
+        
+        .team-info {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .team-info h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .team-info p {
+            color: #718096;
+            font-size: 0.95rem;
+        }
+        
+        .links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #48bb78;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(72, 187, 120, 0.4);
+        }
+        
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                font-size: 40px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🔥🗺️</div>
+        <h1>Glendale Fire Risk Visualization</h1>
+        <p class="subtitle">Interactive Wildfire Risk Assessment for Glendale, California</p>
+        
+        <div class="status-badge">🚧 Coming Soon</div>
+        
+        <div class="description">
+            <p>This project visualizes wildfire risk in Glendale, California using GIS data, a weighted risk model, and an interactive Plotly Dash web dashboard. It aims to help city planners, emergency services, and residents understand spatial patterns of fire vulnerability at the building level.</p>
+        </div>
+        
+        <div class="features">
+            <h2>Project Features</h2>
+            <ul>
+                <li>Interactive 2D Plotly Dash dashboard showing building-level fire risk</li>
+                <li>Embedded 3D QGIS scene with terrain, extruded buildings, and risk overlay</li>
+                <li>Full data pipeline documentation and final report</li>
+                <li>Comparison with CalFire Fire Hazard Severity Zones (FHSZ)</li>
+            </ul>
+        </div>
+        
+        <div class="team-info">
+            <h3>UC Davis STA160 - Team 3</h3>
+            <p>A collaborative project by students in Data Science and Statistics, combining GIS analysis, risk modeling, and interactive web visualization to address wildfire risk assessment.</p>
+        </div>
+        
+        <div class="links">
+            <a href="https://github.com/AFD03/Glendale-Fire-Risk" class="btn btn-primary" target="_blank">View on GitHub</a>
+            <a href="README.md" class="btn btn-secondary">Read Documentation</a>
+        </div>
+        
+        <footer>
+            <p>&copy; 2024 Glendale Fire Risk Project | UC Davis STA160 Team 3</p>
+            <p>All data is public, government-sourced, and contains no personal or identifying information.</p>
+        </footer>
+    </div>
+</body>
+</html>
