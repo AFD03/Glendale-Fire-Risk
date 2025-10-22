@@ -16,6 +16,8 @@ __pycache__/
 *.prj
 *.tif
 *.tiff
+*.qmd
+*.cpg
 
 # Distribution / packaging
 .Python
