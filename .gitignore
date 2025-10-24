@@ -19,6 +19,7 @@ __pycache__/
 *.qmd
 *.cpg
 *.gdb
+*.gdbtable
 
 # Distribution / packaging
 .Python
