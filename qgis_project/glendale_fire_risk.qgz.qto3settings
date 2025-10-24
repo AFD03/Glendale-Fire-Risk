@@ -1,0 +1,246 @@
+{
+  "KEYFRAMES": {
+    "camera": {
+      "groups": []
+    },
+    "layers": {
+      "Clipped_4a1a4e30_2ef7_457f_9452_3336f9401338": {
+        "enabled": true,
+        "groups": []
+      },
+      "Fixed_geometries_04771270_99bf_4bc0_8421_22c044698844": {
+        "enabled": true,
+        "groups": []
+      },
+      "Glendale_boundary_16091b2b_4b35_4ab1_8a16_b5c8fbbcc45a": {
+        "enabled": true,
+        "groups": []
+      },
+      "LARIAC6_BUILDINGS_2020_2dcbb59a_389e_47f1_932c_812caa2cb83b": {
+        "enabled": true,
+        "groups": []
+      },
+      "OUTPUT_c90df00b_72ae_4411_b94e_b3c2414a632d": {
+        "enabled": true,
+        "groups": []
+      },
+      "OUTPUT_ff359c33_0682_469f_8ba4_3710b811ed2b": {
+        "enabled": true,
+        "groups": []
+      },
+      "USGS_13_n35w119_20250916_722ad4e0_8104_4b0a_917d_17a3a8fdc85c": {
+        "enabled": true,
+        "groups": []
+      },
+      "USGSfixed_8eef84a2_94ec_487f_8aea_00caf5624bc3": {
+        "enabled": true,
+        "groups": []
+      },
+      "ds1327_5673b286_372d_48cd_af21_a4b46b36dcb9": {
+        "enabled": true,
+        "groups": []
+      },
+      "fp:86872e0e": {
+        "enabled": true,
+        "groups": []
+      }
+    },
+    "repeat": false
+  },
+  "LAYERS": [
+    {
+      "geomType": 3,
+      "layerId": "Clipped_4a1a4e30_2ef7_457f_9452_3336f9401338",
+      "name": "building_clip",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "OUTPUT_ff359c33_0682_469f_8ba4_3710b811ed2b",
+      "name": "DEM_clip",
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Clip": false,
+        "checkBox_Frame": false,
+        "checkBox_Sides": false,
+        "checkBox_Tiles": false,
+        "checkBox_Visible": true,
+        "checkBox_Wireframe": false,
+        "colorButton_Edge": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_Side": [
+          204,
+          187,
+          170,
+          255
+        ],
+        "colorButton_Wireframe": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "comboBox_ClipLayer": "Clipped_4a1a4e30_2ef7_457f_9452_3336f9401338",
+        "horizontalSlider_DEMSize": 2,
+        "lineEdit_Bottom": "0",
+        "lineEdit_Name": "",
+        "materials": [
+          {
+            "id": "3728c333",
+            "name": "map (canvas)",
+            "properties": {},
+            "type": 0
+          }
+        ],
+        "mtlId": "3728c333",
+        "spinBox_Roughening": 1,
+        "spinBox_Size": 3
+      },
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "OUTPUT_c90df00b_72ae_4411_b94e_b3c2414a632d",
+      "name": "Veg_clip",
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Clip": false,
+        "checkBox_Frame": false,
+        "checkBox_Sides": false,
+        "checkBox_Tiles": false,
+        "checkBox_Visible": true,
+        "checkBox_Wireframe": false,
+        "colorButton_Edge": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_Side": [
+          204,
+          187,
+          170,
+          255
+        ],
+        "colorButton_Wireframe": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "comboBox_ClipLayer": "Clipped_4a1a4e30_2ef7_457f_9452_3336f9401338",
+        "horizontalSlider_DEMSize": 2,
+        "lineEdit_Bottom": "0",
+        "lineEdit_Name": "",
+        "materials": [
+          {
+            "id": "e99c96c9",
+            "name": "map (canvas)",
+            "properties": {},
+            "type": 0
+          }
+        ],
+        "mtlId": "e99c96c9",
+        "spinBox_Roughening": 1,
+        "spinBox_Size": 3
+      },
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "Glendale_boundary_16091b2b_4b35_4ab1_8a16_b5c8fbbcc45a",
+      "name": "Glendale_boundary",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "Fixed_geometries_04771270_99bf_4bc0_8421_22c044698844",
+      "name": "Fixed geometries",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "LARIAC6_BUILDINGS_2020_2dcbb59a_389e_47f1_932c_812caa2cb83b",
+      "name": "LARIAC6_BUILDINGS_2020",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "USGSfixed_8eef84a2_94ec_487f_8aea_00caf5624bc3",
+      "name": "USGSfixed",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "USGS_13_n35w119_20250916_722ad4e0_8104_4b0a_917d_17a3a8fdc85c",
+      "name": "USGS_13_n35w119_20250916",
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Clip": false,
+        "checkBox_Frame": false,
+        "checkBox_Sides": false,
+        "checkBox_Tiles": false,
+        "checkBox_Visible": true,
+        "checkBox_Wireframe": false,
+        "colorButton_Edge": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_Side": [
+          204,
+          187,
+          170,
+          255
+        ],
+        "colorButton_Wireframe": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "comboBox_ClipLayer": "Clipped_4a1a4e30_2ef7_457f_9452_3336f9401338",
+        "horizontalSlider_DEMSize": 2,
+        "lineEdit_Bottom": "0",
+        "lineEdit_Name": "",
+        "materials": [
+          {
+            "id": "6997b12c",
+            "name": "map (canvas)",
+            "properties": {},
+            "type": 0
+          }
+        ],
+        "mtlId": "6997b12c",
+        "spinBox_Roughening": 1,
+        "spinBox_Size": 3
+      },
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "ds1327_5673b286_372d_48cd_af21_a4b46b36dcb9",
+      "name": "ds1327",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "fp:86872e0e",
+      "name": "Flat Plane",
+      "properties": {},
+      "visible": false
+    }
+  ],
+  "Version": 20800
+}
