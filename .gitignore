@@ -18,7 +18,7 @@ __pycache__/
 *.tiff
 *.qmd
 *.cpg
-*.gdp
+*.gdb
 
 # Distribution / packaging
 .Python
