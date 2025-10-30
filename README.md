@@ -10,6 +10,7 @@ This project visualizes wildfire risk in Glendale, California using GIS data, a 
 | **Alexander Davis*** | Statistics | Team Lead, Dashboard Dev, 3D Scene |
 | Alyssa Chau | Statistics/Mgmt Econ | GIS Analysis, Integration |
 | YiChun Chen | Data Science | GIS Processing, 3D Visualization |
+| Odin Nielsen | Statistics | Dashboard Dev, GIS Processing |
 | Zhichu Zheng | Statistics | GIS Data & Terrain Analysis |
 
 \*Team Leader
