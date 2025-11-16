@@ -97,8 +97,7 @@ All data is public, government-sourced, and contains no personal or identifying 
 A weighted overlay model using:
 - **Slope** (derived from DEM)  
 - **Vegetation / Fuel Type**  
-- **Aspect (sun/wind influence)**  
-- (Optional) Distance to roads or past fire perimeters
+- **Aspect (sun/wind influence)** 
 
 Final risk score formula:
 Risk = w₁ * Slope + w₂ * Vegetation + w₃ * Aspect
