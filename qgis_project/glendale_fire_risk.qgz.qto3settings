@@ -102,7 +102,7 @@
         "comboEdit_Color2": {
           "comboData": null,
           "comboText": "None",
-          "editText": "",
+          "editText": "None",
           "type": 7
         },
         "comboEdit_FilePath": {},
