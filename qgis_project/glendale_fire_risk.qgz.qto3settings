@@ -1,4 +1,5 @@
 {
+  "CAMERA": "PERSPECTIVE",
   "KEYFRAMES": {
     "camera": {
       "groups": []
@@ -62,7 +63,7 @@
         "checkBox_Clickable": true,
         "checkBox_Clip": true,
         "checkBox_ExportAttrs": false,
-        "checkBox_Label": false,
+        "checkBox_Label": true,
         "checkBox_Outline": true,
         "checkBox_Underline": false,
         "checkBox_Visible": true,
@@ -92,7 +93,7 @@
         ],
         "comboBox_FontFamily": "sans-serif",
         "comboBox_ObjectType": "Polygon",
-        "comboBox_altitudeMode": null,
+        "comboBox_altitudeMode": "DEM_clip_saved_21114c40_70a9_4f3a_87c8_92c34233052c",
         "comboEdit_Color": {
           "comboData": 1,
           "comboText": "Feature style",
@@ -113,8 +114,8 @@
           "type": 5
         },
         "comboEdit_altitude2": {},
-        "expression_Label": "\"fid\"",
-        "fieldExpressionWidget_altitude": "0",
+        "expression_Label": "\"HEIGHT\"",
+        "fieldExpressionWidget_altitude": "\"HEIGHT\" + \"ELEV\"",
         "geomWidget0": {},
         "geomWidget1": {},
         "geomWidget2": {},
