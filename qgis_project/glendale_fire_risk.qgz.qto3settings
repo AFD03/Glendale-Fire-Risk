@@ -96,7 +96,7 @@
           255
         ],
         "comboBox_FontFamily": "sans-serif",
-        "comboBox_ObjectType": "Polygon",
+        "comboBox_ObjectType": "Extruded",
         "comboBox_altitudeMode": "DEM_clip_saved_21114c40_70a9_4f3a_87c8_92c34233052c",
         "comboEdit_Color": {
           "comboData": 1,
@@ -106,8 +106,8 @@
         },
         "comboEdit_Color2": {
           "comboData": null,
-          "comboText": "None",
-          "editText": "",
+          "comboText": "No edge",
+          "editText": "None",
           "type": 7
         },
         "comboEdit_FilePath": {},
@@ -119,8 +119,13 @@
         },
         "comboEdit_altitude2": {},
         "expression_Label": "\"fid\"",
-        "fieldExpressionWidget_altitude": "HEIGHT+ELEV",
-        "geomWidget0": {},
+        "fieldExpressionWidget_altitude": "0",
+        "geomWidget0": {
+          "comboData": null,
+          "comboText": "Expression",
+          "editText": "HEIGHT*5.5",
+          "type": 1
+        },
         "geomWidget1": {},
         "geomWidget2": {},
         "geomWidget3": {},
@@ -565,11 +570,11 @@
     "comboBox_MaterialType": 0,
     "comboBox_xyShift": true,
     "groupBox_Fog": false,
-    "lineEdit_CenterX": "-13162969.484243654",
-    "lineEdit_CenterY": "4054748.6204301408",
-    "lineEdit_Height": "24348.51370304823",
+    "lineEdit_CenterX": "-13162403.197470391",
+    "lineEdit_CenterY": "4054858.4801591877",
+    "lineEdit_Height": "21632.605586350895",
     "lineEdit_Rotation": "0",
-    "lineEdit_Width": "24348.51370304823",
+    "lineEdit_Width": "21632.605586350895",
     "lineEdit_zFactor": "3.0",
     "slider_Fog": 41
   },
