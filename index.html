@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Glendale Fire Risk Interactive Visualization - A GIS-based wildfire risk assessment tool for Glendale, California">
+    <meta name="description" content="Glendale Fire Risk Interactive Visualization - A GIS-based wildfire risk assessment of Glendale, California">
     <title>Glendale Fire Risk Visualization</title>
     <style>
         * {
@@ -192,8 +192,6 @@
         <h1>Glendale Fire Risk Visualization</h1>
         <p class="subtitle">Interactive Wildfire Risk Assessment for Glendale, California</p>
         
-        <div class="status-badge">🚧 Coming Soon</div>
-        
         <div class="description">
             <p>This project visualizes wildfire risk in Glendale, California using GIS data, a weighted risk model, and an interactive Plotly Dash web dashboard. It aims to help city planners, emergency services, and residents understand spatial patterns of fire vulnerability at the building level.</p>
         </div>
@@ -212,10 +210,25 @@
             <h3>UC Davis STA160 - Team 3</h3>
             <p>A collaborative project by students in Data Science and Statistics, combining GIS analysis, risk modeling, and interactive web visualization to address wildfire risk assessment.</p>
         </div>
+
+        <div class="Visuals">
+            <h2>Drought Risk</h2>
+            <iframe 
+            src="visualization/la_drought_risk_map.html" 
+            width="100%" 
+            height="600" 
+            style="border: none; border-radius: 8px; margin-bottom: 40px;">
+            </iframe>
+
+            <h2>View Frequency of Fires</h2>
+            <iframe 
+            src="visualization/time_series.html" 
+            width="100%" 
+            height="600" 
+            style="border: none; border-radius: 8px; margin-bottom: 40px;">
+            </iframe>
         
         <div class="links">
-            <a href="visualization/la_drought_risk_map.html" class="btn btn-secondary" target="_blank">View Drought Risk</a>
-            <a href="visualization/time_series.html" class="btn btn-secondary" target="_blank">View Frequency of Fires</a>
             <a href="https://github.com/AFD03/Glendale-Fire-Risk" class="btn btn-primary" target="_blank">View on GitHub</a>
             <a href="README.md" class="btn btn-secondary">Read Documentation</a>
         </div>
