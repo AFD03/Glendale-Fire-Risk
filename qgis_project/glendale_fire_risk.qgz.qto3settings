@@ -1,5 +1,4 @@
 {
-  "CAMERA": "PERSPECTIVE",
   "KEYFRAMES": {
     "camera": {
       "groups": []
@@ -42,7 +41,11 @@
         "enabled": true,
         "groups": []
       },
-      "fp:86872e0e": {
+      "fire_risk_final_6ffe0de0_f37e_4a3f_9161_dbd82755dbc9": {
+        "enabled": true,
+        "groups": []
+      },
+      "fp:6e1a538e": {
         "enabled": true,
         "groups": []
       },
@@ -160,7 +163,7 @@
       "layerId": "streets_glendale_c6305f88_a2d8_4e5f_a8b9_ee9fe058271c",
       "name": "streets_glendale",
       "properties": {
-        "checkBox_Clickable": false,
+        "checkBox_Clickable": true,
         "checkBox_Clip": true,
         "checkBox_ExportAttrs": false,
         "checkBox_Visible": true,
@@ -204,92 +207,9 @@
       "visible": true
     },
     {
-      "geomType": 3,
-      "layerId": "Clipped_4a1a4e30_2ef7_457f_9452_3336f9401338",
-      "name": "buildings_glendale",
-      "properties": {
-        "checkBox_Clickable": true,
-        "checkBox_Clip": true,
-        "checkBox_ExportAttrs": false,
-        "checkBox_Label": true,
-        "checkBox_Outline": true,
-        "checkBox_Underline": false,
-        "checkBox_Visible": true,
-        "colorButton_BgColor": [
-          255,
-          255,
-          255,
-          176
-        ],
-        "colorButton_ConnColor": [
-          192,
-          192,
-          208,
-          255
-        ],
-        "colorButton_Label": [
-          0,
-          0,
-          0,
-          255
-        ],
-        "colorButton_OtlColor": [
-          255,
-          255,
-          255,
-          255
-        ],
-        "comboBox_FontFamily": "sans-serif",
-        "comboBox_ObjectType": "Polygon",
-        "comboBox_altitudeMode": "DEM_clip_saved_21114c40_70a9_4f3a_87c8_92c34233052c",
-        "comboEdit_Color": {
-          "comboData": 1,
-          "comboText": "Feature style",
-          "editText": "",
-          "type": 2
-        },
-        "comboEdit_Color2": {
-          "comboData": null,
-          "comboText": "None",
-          "editText": "None",
-          "type": 7
-        },
-        "comboEdit_FilePath": {},
-        "comboEdit_Opacity": {
-          "comboData": 1,
-          "comboText": "Feature style",
-          "editText": "",
-          "type": 5
-        },
-        "comboEdit_altitude2": {},
-        "expression_Label": "\"HEIGHT\"",
-        "fieldExpressionWidget_altitude": "\"HEIGHT\" + \"ELEV\"",
-        "geomWidget0": {},
-        "geomWidget1": {},
-        "geomWidget2": {},
-        "geomWidget3": {},
-        "geomWidget4": {},
-        "groupBox_Background": true,
-        "groupBox_Conn": true,
-        "labelHeightWidget": {
-          "comboData": 1,
-          "comboText": "Relative",
-          "editText": "50",
-          "type": 6
-        },
-        "lineEdit_Name": "",
-        "mtlWidget0": {},
-        "mtlWidget1": {},
-        "radioButton_Expression": true,
-        "radioButton_IntersectingFeatures": true,
-        "slider_FontSize": 3
-      },
-      "visible": false
-    },
-    {
       "geomType": 0,
-      "layerId": "fire_risk_composite_8f91bf7e_7f02_45c1_92d5_363ae586edcb",
-      "name": "fire_risk_map",
+      "layerId": "fire_risk_final_6ffe0de0_f37e_4a3f_9161_dbd82755dbc9",
+      "name": "fire_risk_final",
       "properties": {
         "checkBox_Clickable": true,
         "checkBox_Clip": false,
@@ -316,201 +236,29 @@
           0,
           255
         ],
-        "comboBox_ClipLayer": "Clipped_4a1a4e30_2ef7_457f_9452_3336f9401338",
+        "comboBox_ClipLayer": "Extracted__attribute__8ebf9b48_b90b_48b2_b1de_794031bf2424",
         "horizontalSlider_DEMSize": 2,
         "lineEdit_Bottom": "0",
         "lineEdit_Name": "",
         "materials": [
           {
-            "id": "03bcc193",
+            "id": "8a9566d6",
             "name": "map (canvas)",
             "properties": {
-              "checkBox_Shading": true,
+              "checkBox_Shading": false,
               "checkBox_TransparentBackground": false,
-              "comboBox_TextureSize": "1024",
+              "comboBox_TextureSize": "2048",
               "radioButton_PNG": true,
               "spinBox_Opacity": 100
             },
             "type": 0
           }
         ],
-        "mtlId": "03bcc193",
+        "mtlId": "8a9566d6",
         "spinBox_Roughening": 1,
         "spinBox_Size": 3
       },
       "visible": true
-    },
-    {
-      "geomType": 0,
-      "layerId": "aspect_risk_c5210872_63b7_42dd_a102_79a555d7c38c",
-      "name": "aspect_risk",
-      "properties": {
-        "checkBox_Clickable": true,
-        "checkBox_Clip": false,
-        "checkBox_Frame": false,
-        "checkBox_Sides": false,
-        "checkBox_Tiles": false,
-        "checkBox_Visible": true,
-        "checkBox_Wireframe": false,
-        "colorButton_Edge": [
-          0,
-          0,
-          0,
-          255
-        ],
-        "colorButton_Side": [
-          204,
-          187,
-          170,
-          255
-        ],
-        "colorButton_Wireframe": [
-          0,
-          0,
-          0,
-          255
-        ],
-        "comboBox_ClipLayer": "Clipped_4a1a4e30_2ef7_457f_9452_3336f9401338",
-        "horizontalSlider_DEMSize": 2,
-        "lineEdit_Bottom": "0",
-        "lineEdit_Name": "",
-        "materials": [
-          {
-            "id": "5f69f1cf",
-            "name": "map (canvas)",
-            "properties": {},
-            "type": 0
-          }
-        ],
-        "mtlId": "5f69f1cf",
-        "spinBox_Roughening": 1,
-        "spinBox_Size": 3
-      },
-      "visible": false
-    },
-    {
-      "geomType": 0,
-      "layerId": "veg_fire_risk_fc50c8d4_a41c_49ba_abc3_d740e7001829",
-      "name": "veg_fire_risk",
-      "properties": {
-        "checkBox_Clickable": true,
-        "checkBox_Clip": false,
-        "checkBox_Frame": false,
-        "checkBox_Sides": false,
-        "checkBox_Tiles": false,
-        "checkBox_Visible": true,
-        "checkBox_Wireframe": false,
-        "colorButton_Edge": [
-          0,
-          0,
-          0,
-          255
-        ],
-        "colorButton_Side": [
-          204,
-          187,
-          170,
-          255
-        ],
-        "colorButton_Wireframe": [
-          0,
-          0,
-          0,
-          255
-        ],
-        "comboBox_ClipLayer": "Clipped_4a1a4e30_2ef7_457f_9452_3336f9401338",
-        "horizontalSlider_DEMSize": 2,
-        "lineEdit_Bottom": "0",
-        "lineEdit_Name": "",
-        "materials": [
-          {
-            "id": "99ff3f1d",
-            "name": "map (canvas)",
-            "properties": {},
-            "type": 0
-          }
-        ],
-        "mtlId": "99ff3f1d",
-        "spinBox_Roughening": 1,
-        "spinBox_Size": 3
-      },
-      "visible": false
-    },
-    {
-      "geomType": 0,
-      "layerId": "slope_risk_3e07f152_c7e1_4fb8_92bf_47527dcaf558",
-      "name": "slope_risk",
-      "properties": {},
-      "visible": false
-    },
-    {
-      "geomType": 0,
-      "layerId": "vegetation_clip_b87acf41_6482_4660_bd7a_300c576efcea",
-      "name": "vegetation_glendale",
-      "properties": {},
-      "visible": false
-    },
-    {
-      "geomType": 0,
-      "layerId": "data_processed_raster_aspect_d78b0f1b_10ea_4262_a85b_8d05f306040b",
-      "name": "data_processed_raster_aspect",
-      "properties": {},
-      "visible": false
-    },
-    {
-      "geomType": 0,
-      "layerId": "data_processed_raster_slope_c9c9b13f_62a7_4f24_8323_2591749c4ac2",
-      "name": "data_processed_raster_slope",
-      "properties": {
-        "checkBox_Clickable": true,
-        "checkBox_Clip": false,
-        "checkBox_Frame": false,
-        "checkBox_Sides": false,
-        "checkBox_Tiles": false,
-        "checkBox_Visible": true,
-        "checkBox_Wireframe": false,
-        "colorButton_Edge": [
-          0,
-          0,
-          0,
-          255
-        ],
-        "colorButton_Side": [
-          204,
-          187,
-          170,
-          255
-        ],
-        "colorButton_Wireframe": [
-          0,
-          0,
-          0,
-          255
-        ],
-        "comboBox_ClipLayer": "Clipped_4a1a4e30_2ef7_457f_9452_3336f9401338",
-        "horizontalSlider_DEMSize": 2,
-        "lineEdit_Bottom": "0",
-        "lineEdit_Name": "",
-        "materials": [
-          {
-            "id": "86c0275c",
-            "name": "map (canvas)",
-            "properties": {},
-            "type": 0
-          }
-        ],
-        "mtlId": "86c0275c",
-        "spinBox_Roughening": 1,
-        "spinBox_Size": 3
-      },
-      "visible": false
-    },
-    {
-      "geomType": 3,
-      "layerId": "Glendale_boundary_16091b2b_4b35_4ab1_8a16_b5c8fbbcc45a",
-      "name": "glendale_boundary_utm",
-      "properties": {},
-      "visible": false
     },
     {
       "geomType": 0,
@@ -542,23 +290,92 @@
           0,
           255
         ],
-        "comboBox_ClipLayer": "Clipped_4a1a4e30_2ef7_457f_9452_3336f9401338",
+        "comboBox_ClipLayer": "Extracted__attribute__8ebf9b48_b90b_48b2_b1de_794031bf2424",
         "horizontalSlider_DEMSize": 2,
         "lineEdit_Bottom": "0",
         "lineEdit_Name": "",
         "materials": [
           {
-            "id": "68398f57",
+            "id": "af25ea1b",
             "name": "map (canvas)",
-            "properties": {},
+            "properties": {
+              "checkBox_Shading": false,
+              "checkBox_TransparentBackground": false,
+              "comboBox_TextureSize": "1024",
+              "radioButton_PNG": true,
+              "spinBox_Opacity": 100
+            },
             "type": 0
           }
         ],
-        "mtlId": "68398f57",
+        "mtlId": "af25ea1b",
         "spinBox_Roughening": 1,
         "spinBox_Size": 3
       },
       "visible": true
+    },
+    {
+      "geomType": 3,
+      "layerId": "Glendale_boundary_16091b2b_4b35_4ab1_8a16_b5c8fbbcc45a",
+      "name": "glendale_boundary_utm",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "fire_risk_composite_8f91bf7e_7f02_45c1_92d5_363ae586edcb",
+      "name": "fire_risk_map",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "aspect_risk_c5210872_63b7_42dd_a102_79a555d7c38c",
+      "name": "aspect_risk",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "veg_fire_risk_fc50c8d4_a41c_49ba_abc3_d740e7001829",
+      "name": "veg_fire_risk",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "slope_risk_3e07f152_c7e1_4fb8_92bf_47527dcaf558",
+      "name": "slope_risk",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "vegetation_clip_b87acf41_6482_4660_bd7a_300c576efcea",
+      "name": "vegetation_glendale",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "data_processed_raster_aspect_d78b0f1b_10ea_4262_a85b_8d05f306040b",
+      "name": "data_processed_raster_aspect",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "data_processed_raster_slope_c9c9b13f_62a7_4f24_8323_2591749c4ac2",
+      "name": "data_processed_raster_slope",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "Clipped_4a1a4e30_2ef7_457f_9452_3336f9401338",
+      "name": "buildings_glendale",
+      "properties": {},
+      "visible": false
     },
     {
       "geomType": 2,
@@ -569,59 +386,21 @@
     },
     {
       "geomType": 0,
-      "layerId": "fp:86872e0e",
+      "layerId": "fp:6e1a538e",
       "name": "Flat Plane",
-      "properties": {
-        "checkBox_Clickable": true,
-        "checkBox_Frame": false,
-        "checkBox_Sides": false,
-        "checkBox_Tiles": false,
-        "checkBox_Visible": true,
-        "checkBox_Wireframe": false,
-        "colorButton_Edge": [
-          0,
-          0,
-          0,
-          255
-        ],
-        "colorButton_Side": [
-          204,
-          187,
-          170,
-          255
-        ],
-        "colorButton_Wireframe": [
-          0,
-          0,
-          0,
-          255
-        ],
-        "lineEdit_Altitude": "0",
-        "lineEdit_Bottom": "0",
-        "lineEdit_Name": "",
-        "materials": [
-          {
-            "id": "f62e6b6e",
-            "name": "map (canvas)",
-            "properties": {},
-            "type": 0
-          }
-        ],
-        "mtlId": "f62e6b6e",
-        "spinBox_Size": 3
-      },
+      "properties": {},
       "visible": false
     }
   ],
   "OPT": {},
-  "OutputFilename": "/Users/alexdavis/Desktop/index.html",
+  "OutputFilename": "/Users/alexdavis/Documents/GitHub/Glendale-Fire-Risk/visualization/fire_risk_map/index.html",
   "SCENE": {
     "checkBox_FixAspectRatio": true,
     "checkBox_Outline": false,
     "colorButton_Color": [
-      0,
-      0,
-      0,
+      61,
+      61,
+      61,
       255
     ],
     "colorButton_Fog": [
@@ -633,12 +412,13 @@
     "comboBox_MaterialType": 0,
     "comboBox_xyShift": true,
     "groupBox_Fog": false,
-    "lineEdit_CenterX": "-13162403.197470391",
-    "lineEdit_CenterY": "4054858.4801591877",
-    "lineEdit_Height": "21632.605586350895",
+    "lineEdit_CenterX": "-13163053.946659032",
+    "lineEdit_CenterY": "4054875.077178255",
+    "lineEdit_Height": "20480.1503976183",
     "lineEdit_Rotation": "0",
-    "lineEdit_Width": "21632.605586350895",
+    "lineEdit_Width": "20480.1503976183",
     "lineEdit_zFactor": "3.0",
+    "radioButton_Color": true,
     "slider_Fog": 41
   },
   "Template": "3DViewer.html",
