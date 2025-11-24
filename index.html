@@ -227,6 +227,76 @@
             height="600" 
             style="border: none; border-radius: 8px; margin-bottom: 40px;">
             </iframe>
+
+            <h2>3D Fire Risk Map</h2>
+
+            <div style="display: flex; gap: 20px; margin-bottom: 40px;">
+
+            <!-- Sidebar Legend -->
+            <div style="
+                width: 260px;
+                background: #f7fafc;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                font-size: 0.95rem;
+                color: #2d3748;
+                height: fit-content;
+            ">
+            <h3 style="margin-bottom: 10px;">Fire Risk (Terrain)</h3>
+
+            <div style="margin-bottom: 20px;">
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                    <div style="width:20px;height:20px;background:#1a9641;border-radius:4px;margin-right:8px;"></div>1 – Low
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                    <div style="width:20px;height:20px;background:#a6d96a;border-radius:4px;margin-right:8px;"></div>2
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                    <div style="width:20px;height:20px;background:#ffffc0;border-radius:4px;margin-right:8px;"></div>3
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                    <div style="width:20px;height:20px;background:#fdae61;border-radius:4px;margin-right:8px;"></div>4
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                    <div style="width:20px;height:20px;background:#d7191c;border-radius:4px;margin-right:8px;"></div>5 – Very High
+                </div>
+            </div>
+    
+            <h3 style="margin-top: 15px; margin-bottom: 10px;">Fire Risk (Buildings)</h3>
+    
+            <div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                    <div style="width:20px;height:20px;background:#ffffb2;border-radius:4px;margin-right:8px;"></div>1
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                    <div style="width:20px;height:20px;background:#fecc5c;border-radius:4px;margin-right:8px;"></div>2
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                    <div style="width:20px;height:20px;background:#fd8d3c;border-radius:4px;margin-right:8px;"></div>3
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                    <div style="width:20px;height:20px;background:#f03b20;border-radius:4px;margin-right:8px;"></div>4
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                    <div style="width:20px;height:20px;background:#bd0026;border-radius:4px;margin-right:8px;"></div>5
+                </div>
+            </div>
+        </div>
+    
+        <!-- 3D Map -->
+        <iframe 
+            src="fire3d/index.html"
+            style="
+                width: 100%;
+                height: 600px;
+                border: none;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            ">
+        </iframe>
+
+    </div>
         
         <div class="links">
             <a href="https://github.com/AFD03/Glendale-Fire-Risk" class="btn btn-primary" target="_blank">View on GitHub</a>
