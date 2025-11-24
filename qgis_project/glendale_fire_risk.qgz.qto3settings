@@ -204,7 +204,7 @@
         "radioButton_Expression": true,
         "radioButton_IntersectingFeatures": true
       },
-      "visible": true
+      "visible": false
     },
     {
       "geomType": 0,
@@ -258,12 +258,87 @@
         "spinBox_Roughening": 1,
         "spinBox_Size": 3
       },
-      "visible": true
+      "visible": false
     },
     {
       "geomType": 0,
       "layerId": "DEM_clip_saved_21114c40_70a9_4f3a_87c8_92c34233052c",
       "name": "dem_glendale",
+      "properties": {
+        "checkBox_Clickable": false,
+        "checkBox_Clip": false,
+        "checkBox_Frame": false,
+        "checkBox_Sides": false,
+        "checkBox_Tiles": false,
+        "checkBox_Visible": true,
+        "checkBox_Wireframe": false,
+        "colorButton_Edge": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_Side": [
+          204,
+          187,
+          170,
+          255
+        ],
+        "colorButton_Wireframe": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "comboBox_ClipLayer": "Glendale_boundary_16091b2b_4b35_4ab1_8a16_b5c8fbbcc45a",
+        "horizontalSlider_DEMSize": 2,
+        "lineEdit_Bottom": "0",
+        "lineEdit_Name": "",
+        "materials": [
+          {
+            "id": "d1976695",
+            "name": "map (canvas)",
+            "properties": {
+              "checkBox_Shading": true,
+              "checkBox_TransparentBackground": false,
+              "comboBox_TextureSize": "1024",
+              "radioButton_PNG": true,
+              "spinBox_Opacity": 100
+            },
+            "type": 0
+          }
+        ],
+        "mtlId": "d1976695",
+        "spinBox_Roughening": 1,
+        "spinBox_Size": 3
+      },
+      "visible": true
+    },
+    {
+      "geomType": 3,
+      "layerId": "Glendale_boundary_16091b2b_4b35_4ab1_8a16_b5c8fbbcc45a",
+      "name": "glendale_boundary_utm",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "fire_risk_composite_8f91bf7e_7f02_45c1_92d5_363ae586edcb",
+      "name": "fire_risk_map",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "aspect_risk_c5210872_63b7_42dd_a102_79a555d7c38c",
+      "name": "aspect_risk",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "veg_fire_risk_fc50c8d4_a41c_49ba_abc3_d740e7001829",
+      "name": "veg_fire_risk",
       "properties": {
         "checkBox_Clickable": true,
         "checkBox_Clip": false,
@@ -296,50 +371,16 @@
         "lineEdit_Name": "",
         "materials": [
           {
-            "id": "af25ea1b",
+            "id": "61634677",
             "name": "map (canvas)",
-            "properties": {
-              "checkBox_Shading": false,
-              "checkBox_TransparentBackground": false,
-              "comboBox_TextureSize": "1024",
-              "radioButton_PNG": true,
-              "spinBox_Opacity": 100
-            },
+            "properties": {},
             "type": 0
           }
         ],
-        "mtlId": "af25ea1b",
+        "mtlId": "61634677",
         "spinBox_Roughening": 1,
         "spinBox_Size": 3
       },
-      "visible": true
-    },
-    {
-      "geomType": 3,
-      "layerId": "Glendale_boundary_16091b2b_4b35_4ab1_8a16_b5c8fbbcc45a",
-      "name": "glendale_boundary_utm",
-      "properties": {},
-      "visible": false
-    },
-    {
-      "geomType": 0,
-      "layerId": "fire_risk_composite_8f91bf7e_7f02_45c1_92d5_363ae586edcb",
-      "name": "fire_risk_map",
-      "properties": {},
-      "visible": false
-    },
-    {
-      "geomType": 0,
-      "layerId": "aspect_risk_c5210872_63b7_42dd_a102_79a555d7c38c",
-      "name": "aspect_risk",
-      "properties": {},
-      "visible": false
-    },
-    {
-      "geomType": 0,
-      "layerId": "veg_fire_risk_fc50c8d4_a41c_49ba_abc3_d740e7001829",
-      "name": "veg_fire_risk",
-      "properties": {},
       "visible": false
     },
     {
@@ -367,7 +408,48 @@
       "geomType": 0,
       "layerId": "data_processed_raster_slope_c9c9b13f_62a7_4f24_8323_2591749c4ac2",
       "name": "data_processed_raster_slope",
-      "properties": {},
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Clip": false,
+        "checkBox_Frame": false,
+        "checkBox_Sides": false,
+        "checkBox_Tiles": false,
+        "checkBox_Visible": true,
+        "checkBox_Wireframe": false,
+        "colorButton_Edge": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_Side": [
+          204,
+          187,
+          170,
+          255
+        ],
+        "colorButton_Wireframe": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "comboBox_ClipLayer": "Extracted__attribute__8ebf9b48_b90b_48b2_b1de_794031bf2424",
+        "horizontalSlider_DEMSize": 2,
+        "lineEdit_Bottom": "0",
+        "lineEdit_Name": "",
+        "materials": [
+          {
+            "id": "cbcce9f1",
+            "name": "map (canvas)",
+            "properties": {},
+            "type": 0
+          }
+        ],
+        "mtlId": "cbcce9f1",
+        "spinBox_Roughening": 1,
+        "spinBox_Size": 3
+      },
       "visible": false
     },
     {
@@ -388,19 +470,70 @@
       "geomType": 0,
       "layerId": "fp:6e1a538e",
       "name": "Flat Plane",
-      "properties": {},
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Frame": false,
+        "checkBox_Sides": false,
+        "checkBox_Tiles": false,
+        "checkBox_Visible": true,
+        "checkBox_Wireframe": false,
+        "colorButton_Edge": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_Side": [
+          204,
+          187,
+          170,
+          255
+        ],
+        "colorButton_Wireframe": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "lineEdit_Altitude": "0",
+        "lineEdit_Bottom": "0",
+        "lineEdit_Name": "",
+        "materials": [
+          {
+            "id": "fde42346",
+            "name": "map (canvas)",
+            "properties": {},
+            "type": 0
+          }
+        ],
+        "mtlId": "fde42346",
+        "spinBox_Size": 3
+      },
       "visible": false
     }
   ],
-  "OPT": {},
+  "OPT": {
+    "viewpoint": {
+      "lookAt": {
+        "x": -13163317.577841079,
+        "y": 4053749.0066731446,
+        "z": 480.2271090916225
+      },
+      "pos": {
+        "x": -13155950.401739325,
+        "y": 4039861.9276367733,
+        "z": 1434.323921549711
+      }
+    }
+  },
   "OutputFilename": "/Users/alexdavis/Documents/GitHub/Glendale-Fire-Risk/visualization/fire_risk_map/index.html",
   "SCENE": {
     "checkBox_FixAspectRatio": true,
     "checkBox_Outline": false,
     "colorButton_Color": [
-      61,
-      61,
-      61,
+      246,
+      246,
+      246,
       255
     ],
     "colorButton_Fog": [
@@ -417,7 +550,7 @@
     "lineEdit_Height": "20480.1503976183",
     "lineEdit_Rotation": "0",
     "lineEdit_Width": "20480.1503976183",
-    "lineEdit_zFactor": "3.0",
+    "lineEdit_zFactor": "3.5",
     "radioButton_Color": true,
     "slider_Fog": 41
   },
