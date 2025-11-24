@@ -22,6 +22,10 @@
         "enabled": true,
         "groups": []
       },
+      "Streets_db1c18dd_99dd_46ff_ab9c_9ba964a822d0": {
+        "enabled": true,
+        "groups": []
+      },
       "aspect_risk_c5210872_63b7_42dd_a102_79a555d7c38c": {
         "enabled": true,
         "groups": []
@@ -43,6 +47,10 @@
         "groups": []
       },
       "slope_risk_3e07f152_c7e1_4fb8_92bf_47527dcaf558": {
+        "enabled": true,
+        "groups": []
+      },
+      "streets_glendale_c6305f88_a2d8_4e5f_a8b9_ee9fe058271c": {
         "enabled": true,
         "groups": []
       },
@@ -123,7 +131,7 @@
         "geomWidget0": {
           "comboData": null,
           "comboText": "Expression",
-          "editText": "HEIGHT*5.5",
+          "editText": "HEIGHT*6",
           "type": 1
         },
         "geomWidget1": {},
@@ -144,6 +152,54 @@
         "radioButton_Expression": true,
         "radioButton_IntersectingFeatures": true,
         "slider_FontSize": 3
+      },
+      "visible": true
+    },
+    {
+      "geomType": 2,
+      "layerId": "streets_glendale_c6305f88_a2d8_4e5f_a8b9_ee9fe058271c",
+      "name": "streets_glendale",
+      "properties": {
+        "checkBox_Clickable": false,
+        "checkBox_Clip": true,
+        "checkBox_ExportAttrs": false,
+        "checkBox_Visible": true,
+        "comboBox_ObjectType": "Line",
+        "comboBox_altitudeMode": null,
+        "comboEdit_Color": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 2
+        },
+        "comboEdit_Color2": {
+          "comboData": null,
+          "comboText": "None",
+          "editText": "",
+          "type": 7
+        },
+        "comboEdit_FilePath": {},
+        "comboEdit_Opacity": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 5
+        },
+        "comboEdit_altitude2": {},
+        "fieldExpressionWidget_altitude": "0",
+        "geomWidget0": {},
+        "geomWidget1": {},
+        "geomWidget2": {},
+        "geomWidget3": {},
+        "geomWidget4": {},
+        "lineEdit_Name": "",
+        "mtlWidget0": {
+          "checkBox": false,
+          "type": 9
+        },
+        "mtlWidget1": {},
+        "radioButton_Expression": true,
+        "radioButton_IntersectingFeatures": true
       },
       "visible": true
     },
@@ -273,7 +329,7 @@
               "checkBox_TransparentBackground": false,
               "comboBox_TextureSize": "1024",
               "radioButton_PNG": true,
-              "spinBox_Opacity": 80
+              "spinBox_Opacity": 100
             },
             "type": 0
           }
@@ -503,6 +559,13 @@
         "spinBox_Size": 3
       },
       "visible": true
+    },
+    {
+      "geomType": 2,
+      "layerId": "Streets_db1c18dd_99dd_46ff_ab9c_9ba964a822d0",
+      "name": "Streets",
+      "properties": {},
+      "visible": false
     },
     {
       "geomType": 0,
