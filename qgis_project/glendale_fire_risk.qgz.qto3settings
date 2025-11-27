@@ -156,7 +156,7 @@
       "properties": {
         "checkBox_Clickable": true,
         "checkBox_Clip": true,
-        "checkBox_ExportAttrs": false,
+        "checkBox_ExportAttrs": true,
         "checkBox_Label": false,
         "checkBox_Outline": true,
         "checkBox_Underline": false,
@@ -533,14 +533,14 @@
   "OPT": {
     "viewpoint": {
       "lookAt": {
-        "x": -13162979.35652298,
-        "y": 4053690.308397621,
+        "x": -13162878.484073048,
+        "y": 4053323.282584044,
         "z": 480.2271090916225
       },
       "pos": {
-        "x": -13157516.524381738,
-        "y": 4038701.2053290512,
-        "z": 1034.3708214290432
+        "x": -13157636.336408582,
+        "y": 4038588.8890382685,
+        "z": 1537.5611599993313
       }
     }
   },
