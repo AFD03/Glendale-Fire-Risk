@@ -29,6 +29,10 @@
         "enabled": true,
         "groups": []
       },
+      "buildings_final_456cbb21_244a_4ab1_a7c3_9aa9fc0365fe": {
+        "enabled": true,
+        "groups": []
+      },
       "data_processed_raster_aspect_d78b0f1b_10ea_4262_a85b_8d05f306040b": {
         "enabled": true,
         "groups": []
@@ -151,8 +155,8 @@
     },
     {
       "geomType": 3,
-      "layerId": "Extracted__attribute__8ebf9b48_b90b_48b2_b1de_794031bf2424",
-      "name": "buildings_final",
+      "layerId": "buildings_final_456cbb21_244a_4ab1_a7c3_9aa9fc0365fe",
+      "name": "buildings_final copy",
       "properties": {
         "checkBox_Clickable": true,
         "checkBox_Clip": true,
@@ -474,7 +478,171 @@
       "geomType": 3,
       "layerId": "Clipped_4a1a4e30_2ef7_457f_9452_3336f9401338",
       "name": "buildings_glendale",
-      "properties": {},
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Clip": true,
+        "checkBox_ExportAttrs": false,
+        "checkBox_Label": false,
+        "checkBox_Outline": true,
+        "checkBox_Underline": false,
+        "checkBox_Visible": true,
+        "colorButton_BgColor": [
+          255,
+          255,
+          255,
+          176
+        ],
+        "colorButton_ConnColor": [
+          192,
+          192,
+          208,
+          255
+        ],
+        "colorButton_Label": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_OtlColor": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "comboBox_FontFamily": "sans-serif",
+        "comboBox_ObjectType": "Polygon",
+        "comboBox_altitudeMode": null,
+        "comboEdit_Color": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 2
+        },
+        "comboEdit_Color2": {
+          "comboData": null,
+          "comboText": "None",
+          "editText": "",
+          "type": 7
+        },
+        "comboEdit_FilePath": {},
+        "comboEdit_Opacity": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 5
+        },
+        "comboEdit_altitude2": {},
+        "expression_Label": "\"fid\"",
+        "fieldExpressionWidget_altitude": "0",
+        "geomWidget0": {},
+        "geomWidget1": {},
+        "geomWidget2": {},
+        "geomWidget3": {},
+        "geomWidget4": {},
+        "groupBox_Background": true,
+        "groupBox_Conn": true,
+        "labelHeightWidget": {
+          "comboData": 1,
+          "comboText": "Relative",
+          "editText": "50",
+          "type": 6
+        },
+        "lineEdit_Name": "",
+        "mtlWidget0": {},
+        "mtlWidget1": {},
+        "radioButton_Expression": true,
+        "radioButton_IntersectingFeatures": true,
+        "slider_FontSize": 3
+      },
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "Extracted__attribute__8ebf9b48_b90b_48b2_b1de_794031bf2424",
+      "name": "buildings_final",
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Clip": true,
+        "checkBox_ExportAttrs": true,
+        "checkBox_Label": false,
+        "checkBox_Outline": true,
+        "checkBox_Underline": false,
+        "checkBox_Visible": true,
+        "colorButton_BgColor": [
+          255,
+          255,
+          255,
+          176
+        ],
+        "colorButton_ConnColor": [
+          192,
+          192,
+          208,
+          255
+        ],
+        "colorButton_Label": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_OtlColor": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "comboBox_FontFamily": "sans-serif",
+        "comboBox_ObjectType": "Extruded",
+        "comboBox_altitudeMode": "DEM_clip_saved_21114c40_70a9_4f3a_87c8_92c34233052c",
+        "comboEdit_Color": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 2
+        },
+        "comboEdit_Color2": {
+          "comboData": null,
+          "comboText": "No edge",
+          "editText": "None",
+          "type": 7
+        },
+        "comboEdit_FilePath": {},
+        "comboEdit_Opacity": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 5
+        },
+        "comboEdit_altitude2": {},
+        "expression_Label": "\"fid\"",
+        "fieldExpressionWidget_altitude": "0",
+        "geomWidget0": {
+          "comboData": null,
+          "comboText": "Expression",
+          "editText": "HEIGHT*6",
+          "type": 1
+        },
+        "geomWidget1": {},
+        "geomWidget2": {},
+        "geomWidget3": {},
+        "geomWidget4": {},
+        "groupBox_Background": true,
+        "groupBox_Conn": true,
+        "labelHeightWidget": {
+          "comboData": 1,
+          "comboText": "Relative",
+          "editText": "50",
+          "type": 6
+        },
+        "lineEdit_Name": "",
+        "mtlWidget0": {},
+        "mtlWidget1": {},
+        "radioButton_Expression": true,
+        "radioButton_IntersectingFeatures": true,
+        "slider_FontSize": 3
+      },
       "visible": false
     },
     {
@@ -533,14 +701,14 @@
   "OPT": {
     "viewpoint": {
       "lookAt": {
-        "x": -13162878.484073048,
-        "y": 4053323.282584044,
+        "x": -13162704.345461667,
+        "y": 4053558.216205715,
         "z": 480.2271090916225
       },
       "pos": {
-        "x": -13157636.336408582,
-        "y": 4038588.8890382685,
-        "z": 1537.5611599993313
+        "x": -13158445.027338777,
+        "y": 4038327.145477274,
+        "z": 1295.8956721041825
       }
     }
   },
