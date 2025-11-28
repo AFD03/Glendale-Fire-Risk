@@ -225,7 +225,7 @@ body {
 }
 
 #qr_layername_table tr, #qr_coords_table tr {
-  display: none !important;
+  background-color: #eee;
 }
 
 #qr_attrs_table tr:nth-child(odd) {

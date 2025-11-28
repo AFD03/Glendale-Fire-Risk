@@ -217,7 +217,7 @@
         "geomWidget0": {
           "comboData": null,
           "comboText": "Expression",
-          "editText": "HEIGHT*6",
+          "editText": "height (meters)*6",
           "type": 1
         },
         "geomWidget1": {},
