@@ -35,7 +35,7 @@
   <div class="layout">
     <aside class="sidebar" role="navigation" aria-label="Sidebar controls">
       <h2>Glendale Fire Risk — Controls</h2>
-      <p class="small">Instructions: rotate with left-drag, zoom with scroll, click building to view details (if enabled).</p>
+      <p class="small">Instructions: rotate with left-drag, zoom with scroll, click building to view details.</p>
 
       <div style="margin-top:12px">
         <strong>Legend — Terrain Risk</strong>
@@ -59,20 +59,6 @@
         </div>
       </div>
 
-      <div class="controls" aria-hidden="false">
-        <label class="small">View</label>
-        <select id="viewSelector" aria-label="Select layer to view">
-          <option value="both">Combined (Terrain + Buildings)</option>
-          <option value="terrain">Terrain Risk Only</option>
-          <option value="buildings">Buildings Only</option>
-        </select>
-
-        <label class="small">Overlay</label>
-        <div style="display:flex;gap:8px">
-          <button id="toggleCalfire">Toggle CalFire FHSZ</button>
-          <button id="showHigh" class="primary">Show High Risk (4–5)</button>
-        </div>
-
         <label class="small">Legend / Help</label>
         <button id="openHelp">How to use</button>
 
@@ -83,8 +69,8 @@
         <strong>Quick insights</strong>
         <ol style="padding-left:18px">
           <li>Explore hillside neighborhoods along the Verdugo foothills.</li>
-          <li>Compare our model with CalFire FHSZ.</li>
-          <li>Click a building to view the risk breakdown (slope, aspect, vegetation).</li>
+          <li>Click on the information icon embedded in the map to view additional controls.</li>
+          <li>Click a building to view the risk breakdown (height (HEIGHT), elevation (ELEV), associated fire risk score (FIRE RISK)).</li>
         </ol>
       </div>
     </aside>
@@ -117,81 +103,14 @@
   </div>
 
   <script>
-    // Basic UI interactions and iframe messaging
-    const mapframe = document.getElementById('mapframe');
-    const toggleCalfireBtn = document.getElementById('toggleCalfire');
-    const showHighBtn = document.getElementById('showHigh');
-    const viewSelector = document.getElementById('viewSelector');
-    const infoModal = document.getElementById('infoModal');
-    const closeModal = document.getElementById('closeModal');
-    const closeBtn = document.getElementById('closeBtn');
+    // open help interaction
     const openHelp = document.getElementById('openHelp');
 
-    // Send control messages to the iframe (QGIS2threejs side must implement message listener)
+    // Send control message
     function postToMap(message){
-      mapframe.contentWindow.postMessage(message, '*');
-    }
-
-    toggleCalfireBtn.onclick = () => {
-      postToMap({type:'toggle_calfire'});
-    };
-
-    showHighBtn.onclick = () => {
-      postToMap({type:'filter_buildings', minRisk:4});
-    };
-
-    viewSelector.onchange = (e) => {
-      postToMap({type:'set_view', view:e.target.value});
-    };
 
     openHelp.onclick = () => {
       alert("How to use:\n• Drag = rotate, Scroll = zoom\n• Click buildings to open details\n• Use the 'Show High Risk' button to highlight high-risk buildings");
-    };
-
-    // Listening for building click events coming from iframe
-    window.addEventListener('message', async (evt) => {
-      // NOTE: In production, verify evt.origin for security
-      const data = evt.data;
-      if(!data || !data.type) return;
-
-      if(data.type === 'building_clicked'){
-        // Example structure expected from the iframe: {type: 'building_clicked', id: 'B123', centroid: [lng, lat]}
-        // To enrich info, fetch from your API:
-        try {
-          // Example call to your backend; replace with your API route
-          const resp = await fetch(`/api/building/${encodeURIComponent(data.id)}`);
-          const json = await resp.json();
-          showModal(json);
-        } catch(err){
-          // Fallback if backend not available — show what iframe sent
-          showModal({
-            id: data.id,
-            risk: data.risk || '—',
-            slope: data.slope || '—',
-            aspect: data.aspect || '—',
-            vegetation: data.vegetation || '—',
-            fhsz: data.fhsz || '—'
-          });
-        }
-      }
-    });
-
-    function showModal(obj){
-      document.getElementById('modalTitle').textContent = `Building ${obj.id || obj.bldg_id || ''}`;
-      document.getElementById('b_risk').textContent = obj.risk ?? '—';
-      document.getElementById('b_slope').textContent = obj.slope ?? '—';
-      document.getElementById('b_aspect').textContent = obj.aspect ?? '—';
-      document.getElementById('b_veg').textContent = obj.vegetation ?? '—';
-      document.getElementById('b_fhsz').textContent = obj.fhsz ?? '—';
-      infoModal.style.display = 'block';
-    }
-
-    closeModal.onclick = () => infoModal.style.display = 'none';
-    closeBtn.onclick = () => infoModal.style.display = 'none';
-
-    // Example: open report button
-    document.getElementById('openInReport').onclick = () => {
-      window.open('final_report.pdf', '_blank');
     };
   </script>
 </body>
