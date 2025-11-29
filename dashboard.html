@@ -129,11 +129,11 @@ fetch("glendale_boundary_4326.geojson")
   .then(boundary => {
     L.geoJSON(boundary, {
       style: {
-        color: "#2c3e50",
-        weight: 2,
+        color: "#374151",
+        weight: 1.5,
         fillOpacity: 0,
-        opacity: 0.9,
-        dashArray: "5,3"
+        opacity: 0.35,
+        dashArray: "6 4"
       }
     }).addTo(map);
   });
