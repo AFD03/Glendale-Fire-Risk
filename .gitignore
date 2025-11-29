@@ -8,7 +8,7 @@ __pycache__/
 
 # Data files
 *.csv
-*.geojson
+# *.geojson
 *.gpkg
 *.shp
 *.shx
