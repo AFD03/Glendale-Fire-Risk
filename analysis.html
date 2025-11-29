@@ -57,22 +57,6 @@
     box-shadow:0 4px 16px rgba(0,0,0,0.08);
   }
 
-  .chart-box {
-    width: 100%;
-    max-width: 1100px;
-    margin: 40px auto;
-    height: 500px;   /* <-- This forces Plotly to render correctly */
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    padding: 20px;
-    background: white;
-  }
-
-  .chart-box .plotly-graph-div {
-    width: 100% !important;
-    height: 100% !important;   /* <-- Important for Plotly */
-  }
-
   nav {
     text-align:center;
     padding:10px;
@@ -158,14 +142,14 @@
 
   <!-- OPTIONAL CHART 1 -->
   <h3 style="margin-top:25px;">Wildfire Count History (Supplemental)</h3>
-  <div class="chart-box">
-  <iframe src="visualization/fire_history_interactive.html"></iframe>
+  <div
+  <iframe class="chart" src="visualization/fire_history_interactive.html"></iframe>
     </div>
 
   <!-- OPTIONAL CHART 2 -->
   <h3 style="margin-top:25px;">Total Acres Burned by Decade (Supplemental)</h3>
-  <div class="chart-box">
-  <iframe src="visualization/fire_acres_decade_interactive"></iframe>
+  <div
+  <iframe class="chart" src="visualization/fire_acres_decade_interactive"></iframe>
     </div>
 </div>
 
