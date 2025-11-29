@@ -1,189 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>Glendale Fire Risk Dashboard — 2D Map</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="utf-8">
+<title>Glendale Fire Risk — 2D Interactive Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
 <style>
-  body{
-    margin:0;
-    font-family:Inter,system-ui,Segoe UI,Roboto;
-    background:#f3f4f6;
-    color:#0f172a;
-  }
-  .layout{
-    display:grid;
-    grid-template-columns:300px 1fr;
-    min-height:100vh;
-  }
-  .sidebar{
-    padding:20px;
-    background:white;
-    box-shadow:2px 0 10px rgba(0,0,0,0.08);
-  }
-  h2{margin-top:0}
-  #map{
-    width:100%;
-    height:100vh;
-  }
-  .control-group{
-    margin:15px 0;
-  }
-  select,button{
-    width:100%;
-    padding:10px;
-    margin-top:6px;
-    border-radius:8px;
-    border:1px solid #d1d5db;
-    background:white;
-    cursor:pointer;
-  }
-  .legend{
-    margin-top:18px;
-  }
-  .legend-row{
+  body { margin: 0; font-family: system-ui, sans-serif; background:#f5f5f5; }
+  #map { height: 600px; border-radius: 10px; margin: 20px; box-shadow:0 2px 12px rgba(0,0,0,0.1); }
+
+  .controls {
     display:flex;
-    align-items:center;
-    gap:8px;
-    margin-bottom:6px;
+    gap:10px;
+    padding: 10px 20px;
   }
-  .color-box{
-    width:20px;
-    height:16px;
-    border-radius:4px;
-    border:1px solid rgba(0,0,0,0.15);
+
+  button {
+    padding:8px 14px;
+    border:none;
+    background:#e5e7eb;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:600;
   }
-  @media(max-width:900px){
-    .layout{
-      grid-template-columns:1fr;
-    }
-    #map{
-      height:60vh;
-    }
-  }
+  button.active { background:#d9464a; color:white; }
+
 </style>
 </head>
-
 <body>
 
-<div class="layout">
-  <aside class="sidebar">
-    <h2>2D Glendale Fire Risk Map</h2>
-    <p>Use the controls below to filter and explore the building-level fire-risk model.</p>
+<h2 style="padding: 20px 20px 0 20px;">2D Fire Risk Map (Building Footprints)</h2>
+<p style="padding: 0 20px; color:#555;">
+Use the filters below to highlight buildings based on fire-risk category.
+Click a building for detailed information.
+</p>
 
-    <div class="control-group">
-      <label><strong>Filter by Fire Risk</strong></label>
-      <select id="riskFilter">
-        <option value="all">Show All</option>
-        <option value="1">1 — Low</option>
-        <option value="2">2 — Moderate</option>
-        <option value="3">3 — High</option>
-        <option value="4">4 — Very High</option>
-        <option value="5">5 — Extreme</option>
-      </select>
-    </div>
-
-    <div class="control-group">
-      <label><strong>Basemap</strong></label>
-      <select id="basemapSelect">
-        <option value="streets">Street Map</option>
-        <option value="satellite">Satellite</option>
-        <option value="light">Light Gray</option>
-      </select>
-    </div>
-
-    <!-- Legend -->
-    <div class="legend">
-      <h4>Building Fire Risk Legend</h4>
-      <div class="legend-row"><div class="color-box" style="background:#ffffb2"></div>1 — Low</div>
-      <div class="legend-row"><div class="color-box" style="background:#fecc5c"></div>2 — Moderate</div>
-      <div class="legend-row"><div class="color-box" style="background:#fd8d3c"></div>3 — High</div>
-      <div class="legend-row"><div class="color-box" style="background:#f03b20"></div>4 — Very High</div>
-      <div class="legend-row"><div class="color-box" style="background:#bd0026"></div>5 — Extreme</div>
-    </div>
-  </aside>
-
-  <main>
-    <div id="map"></div>
-  </main>
+<div class="controls">
+  <button onclick="showAll()">Show All</button>
+  <button onclick="filterRisk(4)">High Risk (4–5)</button>
+  <button onclick="filterRisk(5)">Extreme Only (5)</button>
 </div>
+
+<div id="map"></div>
 
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-// ----------------------
-// 🔥 1. Map initialization
-// ----------------------
+
+// ----------------------------
+// 1. Mapbox Basemaps
+// ----------------------------
+const mapboxToken = "pk.eyJ1IjoiYWRhdjI1NCIsImEiOiJjbWlqeG1zaXgwaDllM25weHMydnNib3czIn0.Va3FSmaOj7_D0q1K2zF5sQ";
+
+const basemapStreet = L.tileLayer(
+  `https://api.mapbox.com/styles/v1/mapbox/streets-v12/tiles/{z}/{x}/{y}?access_token=${mapboxToken}`,
+  { maxZoom: 22, tileSize: 512, zoomOffset: -1 }
+);
+
+const basemapSat = L.tileLayer(
+  `https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/tiles/{z}/{x}/{y}?access_token=${mapboxToken}`,
+  { maxZoom: 22, tileSize: 512, zoomOffset: -1 }
+);
+
+// ----------------------------
+// 2. Initialize Map
+// ----------------------------
 const map = L.map('map', {
-  zoomControl: true,
-  minZoom: 11,
-  maxZoom: 18
+  center: [34.16, -118.25], // Glendale
+  zoom: 13,
+  layers: [basemapStreet]
 });
 
-// Basemap layers
-const accessToken = "pk.eyJ1IjoiYWRhdjI1NCIsImEiOiJjbWlqeG1zaXgwaDllM25weHMydnNib3czIn0.Va3FSmaOj7_D0q1K2zF5sQ";
+L.control.layers(
+  { "Street Map": basemapStreet, "Satellite": basemapSat },
+  {}
+).addTo(map);
 
-// cancan swap these for free basemaps if needed
-const basemaps = {
-  streets: L.tileLayer(
-    `https://api.mapbox.com/styles/v1/mapbox/streets-v12/tiles/{z}/{x}/{y}?access_token=${accessToken}`,
-    { maxZoom: 20, tileSize: 512, zoomOffset: -1 }
-  ),
-
-  satellite: L.tileLayer(
-    `https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/{z}/{x}/{y}?access_token=${accessToken}`,
-    { maxZoom: 20, tileSize: 512, zoomOffset: -1 }
-  ),
-
-  light: L.tileLayer(
-    `https://api.mapbox.com/styles/v1/mapbox/light-v11/tiles/{z}/{x}/{y}?access_token=${accessToken}`,
-    { maxZoom: 20, tileSize: 512, zoomOffset: -1 }
-  )
+// ----------------------------
+// 3. Building Colors
+// ----------------------------
+const COLORS = {
+  1: "#ffffb2",
+  2: "#fecc5c",
+  3: "#fd8d3c",
+  4: "#f03b20",
+  5: "#bd0026"
 };
 
-basemaps.streets.addTo(map);
-
-// ---------------------------
-// 🔥 2. Risk Color Function
-// ---------------------------
-function getColor(risk) {
-  return {
-    1: "#ffffb2",
-    2: "#fecc5c",
-    3: "#fd8d3c",
-    4: "#f03b20",
-    5: "#bd0026"
-  }[risk] || "#999999";
-}
-
-// ---------------------------
-// 🔥 3. Load Buildings GeoJSON
-// ---------------------------
+// ----------------------------
+// 4. Load Your GeoJSON
+// ----------------------------
 let buildingLayer;
 
-fetch("data_processed/buildings_glendale.geojson")
+fetch("data_processed/buildings_glendale_4326.geojson")
   .then(res => res.json())
-  .then(geojson => {
+  .then(data => {
 
-    buildingLayer = L.geoJSON(geojson, {
+    buildingLayer = L.geoJSON(data, {
       style: feature => ({
-        color: getColor(feature.properties["Fire Risk"]),
-        weight: 1,
-        fillOpacity: 0.7
+        color: "#222",
+        weight: 0.5,
+        fillColor: COLORS[feature.properties["Fire Risk"]],
+        fillOpacity: 0.85
       }),
-
       onEachFeature: (feature, layer) => {
         const p = feature.properties;
+
         layer.bindPopup(`
           <strong>Building ID:</strong> ${p.fid}<br>
           <strong>Fire Risk:</strong> ${p["Fire Risk"]}<br>
-          <strong>Height:</strong> ${p.Height.toFixed(2)} m<br>
-          <strong>Elevation:</strong> ${p.Elevation.toFixed(2)} m<br>
+          <strong>Height:</strong> ${p.Height.toFixed(1)} m<br>
+          <strong>Elevation:</strong> ${p.Elevation.toFixed(1)} m
         `);
       }
     }).addTo(map);
@@ -191,41 +122,31 @@ fetch("data_processed/buildings_glendale.geojson")
     map.fitBounds(buildingLayer.getBounds());
   });
 
-// --------------------------------
-// 🔥 4. Filtering by Fire Risk
-// --------------------------------
-document.getElementById("riskFilter").addEventListener("change", (e) => {
-  const selected = e.target.value;
 
-  buildingLayer.clearLayers();
+// ----------------------------
+// 5. Filters
+// ----------------------------
+function showAll() {
+  buildingLayer.setStyle(f => ({
+    fillColor: COLORS[f.properties["Fire Risk"]],
+    fillOpacity: 0.85,
+    weight: 0.4,
+    color: "#333"
+  }));
+}
 
-  fetch("data_processed/buildings_glendale.geojson")
-    .then(res => res.json())
-    .then(data => {
+function filterRisk(minRisk) {
+  buildingLayer.setStyle(f => {
+    const r = f.properties["Fire Risk"];
+    return {
+      fillColor: COLORS[r],
+      fillOpacity: (r >= minRisk) ? 0.9 : 0.05,
+      weight: (r >= minRisk) ? 1.2 : 0.1,
+      color: (r >= minRisk) ? "#000" : "#999"
+    };
+  });
+}
 
-      const filtered = {
-        type: "FeatureCollection",
-        features: data.features.filter(f => {
-          if (selected === "all") return true;
-          return f.properties["Fire Risk"] == selected;
-        })
-      };
-
-      buildingLayer.addData(filtered);
-    });
-});
-
-// --------------------------------
-// 🔥 5. Basemap Switching
-// --------------------------------
-document.getElementById("basemapSelect").addEventListener("change", e => {
-  const value = e.target.value;
-  map.eachLayer(l => map.removeLayer(l));
-
-  basemaps[value].addTo(map);
-  if (buildingLayer) buildingLayer.addTo(map);
-});
 </script>
-
 </body>
 </html>
