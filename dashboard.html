@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fire Risk Dashboard — Glendale, CA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root{
+      --card:#ffffff;
+      --bg:#f3f4f6;
+      --muted:#6b7280;
+      --text:#1f2937;
+    }
+    body{
+      margin:0;padding:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;
+      background:var(--bg);
+      color:var(--text);
+    }
+    header{
+      text-align:center;
+      padding:40px 20px;
+    }
+    header h1{margin:0;font-size:2rem;color:#374151;}
+    header p{color:var(--muted);max-width:650px;margin:12px auto;}
+
+    .grid{
+      max-width:1300px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      padding:20px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.06);
+      padding:12px;
+    }
+    iframe{
+      width:100%;
+      height:420px;
+      border:none;
+      border-radius:10px;
+    }
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr;}
+      iframe{height:350px;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>2D Fire Risk Dashboard</h1>
+  <p>Interactive visualizations showing drought patterns, historical fires, acreage burned, and fire frequency near Glendale.</p>
+</header>
+
+<div class="grid">
+
+  <div class="card">
+    <h3>Drought Risk (NOAA Sc-PDSI)</h3>
+    <iframe src="visualization/la_drought_risk_map.html"></iframe>
+  </div>
+
+  <div class="card">
+    <h3>Fire History by Decade</h3>
+    <iframe src="visualization/fire_acres_decade_interactive.html"></iframe>
+  </div>
+
+  <div class="card">
+    <h3>Acreage Burned Over Time</h3>
+    <iframe src="visualization/fire_history_interactive.html"></iframe>
+  </div>
+
+  <div class="card">
+    <h3>Fire Frequency</h3>
+    <iframe src="visualization/time_series.html"></iframe>
+  </div>
+
+</div>
+
+</body>
+</html>
