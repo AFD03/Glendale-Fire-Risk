@@ -145,6 +145,23 @@ function filterRisk(minRisk) {
       color: (r >= minRisk) ? "#000" : "#999"
     };
   });
+
+// ----------------------------
+// 6. Add Glendale Boundary
+// ----------------------------
+fetch("glendale_boundary_4326.geojson")
+  .then(res => res.json())
+  .then(boundary => {
+    L.geoJSON(boundary, {
+      style: {
+        color: "#2c3e50"
+        weight: 2
+        fillOpacity: 0
+        opacity: 0.9
+        dashArray: "5,3"
+      }
+    }).addTo(map);
+  });
 }
 
 </script>
