@@ -57,6 +57,28 @@
     box-shadow:0 4px 16px rgba(0,0,0,0.08);
   }
 
+  .chart-row {
+    display: flex;
+    gap: 24px;
+    padding: 20px;
+    flex-wrap: wrap; /* allows stacking on small screens */
+  }
+
+  .chart-box {
+    flex: 1;
+    min-width: 450px;     /* prevents tiny squeezing */
+    background: #fff;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+
+  /* Makes the Plotly div fill its container */
+  .chart-box .plotly-graph-div {
+    width: 100% !important;
+    height: 480px !important;   /* increase height */
+  }
+
   nav {
     text-align:center;
     padding:10px;
@@ -139,16 +161,16 @@
     but are not central to our final building-level wildfire risk model. They are included here for reviewers
     interested in the broader environmental patterns influencing the region. LAC refers to LA county, VNC to Ventura county, and ANF to Angeles National Forest
   </p>
-
+<div class="chart-row">
   <!-- OPTIONAL CHART 1 -->
   <h3 style="margin-top:25px;">Wildfire Count History (Supplemental)</h3>
-  <div
-  <iframe class="chart" src="visualization/fire_history_interactive.html"></iframe>
+  <div class="chart-box">
+  <iframe src="visualization/fire_history_interactive.html"></iframe>
     </div>
 
   <!-- OPTIONAL CHART 2 -->
   <h3 style="margin-top:25px;">Total Acres Burned by Decade (Supplemental)</h3>
-  <div
+  <div class="chart-box">
   <iframe class="chart" src="visualization/fire_acres_decade_interactive"></iframe>
     </div>
 </div>
