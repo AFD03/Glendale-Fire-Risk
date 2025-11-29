@@ -1,124 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="3D Wildfire Risk Explorer — Glendale, CA. A data-driven visualization combining slope, aspect, and vegetation to assess building-level fire risk." />
+  <meta charset="UTF-8">
   <title>3D Visualization of Wildfire Risk in Glendale, CA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     :root{
-      --accent:#c2411c;
+      --bg:#f7f7fa;
+      --card:#ffffff;
+      --accent:#4a63d9;
+      --text:#1f2937;
       --muted:#6b7280;
-      --bg: #f7f8fb;
-      --card:#fff;
     }
-    *{box-sizing:border-box}
     body{
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      margin:0; background: background: linear-gradient(180deg, #f7f7f7 0%, #eaeaea 100%); color:#111; line-height:1.55;
-      -webkit-font-smoothing:antialiased; padding:32px;
+      margin:0;
+      padding:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
     }
-    .center{max-width:1100px;margin:0 auto}
-    header{display:flex;align-items:center;gap:18px;margin-bottom:18px}
-    .logo{font-size:36px}
-    h1{font-size:2rem;margin:0;text-align: center;color:#0f172a}
-    .subtitle{color:var(--muted);margin-top:6px}
-    .card{background:var(--card);border-radius:12px;padding:22px;box-shadow:0 6px 24px rgba(15,23,42,0.06); margin-top:18px}
-    .lead{margin:0 0 16px 0;color:#111;font-size:1.03rem}
-    .two-col{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
-    .small{font-size:0.95rem;color:var(--muted)}
-    .workflow{width:100%;height:120px;border-radius:8px;overflow:hidden;background:white;display:flex;align-items:center;justify-content:center}
-    ul.keypoints{margin:12px 0 0 0;padding-left:18px}
-    .cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-    a.btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
-    a.btn--secondary{background:#334155;color:white}
-    footer{margin-top:28px;color:var(--muted);font-size:0.9rem}
-    @media(max-width:900px){.two-col{grid-template-columns:1fr;}.workflow{height:100px}}
+    header{
+      text-align:center;
+      padding:60px 20px;
+    }
+    header h1{font-size:2.6rem;margin:0;color:var(--accent);}
+    header p{font-size:1.15rem;color:var(--muted);max-width:700px;margin:12px auto 0;}
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 20px 80px;
+    }
+
+    .section{
+      background:var(--card);
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.06);
+      margin-bottom:30px;
+    }
+    .section h2{margin-top:0;color:#1d2c4d;}
+    .section p{color:#374151;}
+
+    .nav-links{
+      display:flex;
+      gap:12px;
+      margin-top:18px;
+      flex-wrap:wrap;
+    }
+    .nav-links a{
+      padding:10px 18px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      background:var(--accent);
+      color:white;
+      transition:0.2s;
+    }
+    .nav-links a:hover{opacity:0.85;}
+
+    footer{
+      text-align:center;
+      padding:28px;
+      color:var(--muted);
+    }
   </style>
 </head>
 <body>
-  <div class="center">
-    <header>
-      <div>
-        <h1>3D Visualization of Wildfire Risk in Glendale, CA</h1>
-        <div class="subtitle small">An interactive, building-level view of wildfire vulnerability using terrain, vegetation, and building data.</div>
-      </div>
-    </header>
 
-    <div class="card">
-      <p class="lead">
-        Wildfires move faster on steep, dry slopes and on south-facing aspects; vegetation supplies the fuel.
-        This project brings those elements together into a data-driven, 3D map of Glendale — letting planners,
-        emergency managers, and residents explore how terrain, vegetation, and buildings combine to create local risk.
-      </p>
+<header>
+  <h1>3D Visualization of Wildfire Risk in Glendale, CA</h1>
+  <p>A hybrid geospatial dashboard combining 3D terrain modeling, building-level fire risk scoring, and 2D analytical visualizations.</p>
+</header>
 
-      <div class="two-col">
-        <div>
-          <h3>Why this matters</h3>
-          <p class="small">
-            Glendale sits at the edge of the Verdugo foothills where topography and vegetation create strong
-            local variations in fire behavior. A spatial, interactive view helps translate risk into actionable insight:
-            where to prioritize defensible space, targeted inspection, or vegetation management.
-          </p>
+<div class="container">
 
-          <h3 style="margin-top:14px">How the model works (high level)</h3>
-          <ul class="keypoints small">
-            <li><strong>Slope:</strong> steeper slopes increase spread — higher slope → higher terrain risk.</li>
-            <li><strong>Aspect:</strong> south-facing slopes receive more sun and dry out faster — factored into risk.</li>
-            <li><strong>Vegetation:</strong> fuel type and density are mapped from public sources and combined with drought indicators.</li>
-            <li><strong>Buildings:</strong> building footprint, elevation, and proximity to high-risk terrain are combined to compute a building-level risk score (1–5).</li>
-          </ul>
+  <div class="section">
+    <h2>Project Purpose</h2>
+    <p>
+      This project explores wildfire exposure across Glendale, CA by combining geospatial datasets, 
+      terrain analysis, and logic-based building risk modeling. The goal is to understand not only 
+      <em>where</em> wildfire risk is highest, but also <em>which structures</em> are most affected.
+    </p>
+  </div>
 
-          <h3 style="margin-top:14px">Key findings (summary)</h3>
-          <ul class="keypoints small">
-            <li>High and extreme risks cluster along the foothill neighborhoods adjacent to steep canyons.</li>
-            <li>South-facing slopes show consistently higher terrain risk in our weighted overlay than north-facing slopes.</li>
-            <li>Comparison to CalFire’s FHSZ shows both agreements and local differences driven by up-to-date vegetation & DEM-derived slope.</li>
-          </ul>
+  <div class="section">
+    <h2>Why Glendale?</h2>
+    <p>
+      Glendale sits along the Verdugo Mountains, an area recognized for steep slopes, dense vegetation, and 
+      significant fire history. The city has experienced multiple near-miss wildfires, and its hillside neighborhoods 
+      place thousands of structures close to wildland-urban interface zones.
+    </p>
+  </div>
 
-          <div class="cta">
-            <a class="btn" href="interactive.html">Open Interactive Map</a>
-            <a class="btn btn--secondary" href="https://github.com/AFD03/Glendale-Fire-Risk" target="_blank">View Code on GitHub</a>
-          </div>
-        </div>
+  <div class="section">
+    <h2>Methods Overview</h2>
+    <p>
+      Our approach integrates terrain factors (slope, aspect), vegetation zones, and structure-level attributes 
+      such as height and elevation. Risk categories were calculated using a weighted logic-based model, then visualized 
+      in 3D using QGIS2threejs and in 2D using Plotly dashboards.
+    </p>
+  </div>
 
-        <!-- Sidebar with workflow -->
-        <aside>
-          <div class="workflow card" aria-hidden="true">
-            <!-- Inline SVG workflow (simple, accessible) -->
-            <svg width="320" height="120" viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow diagram">
-              <g font-family="sans-serif" font-size="11" fill="#0f172a">
-                <rect x="8" y="12" width="86" height="28" rx="6" fill="#fff7ed" stroke="#f59e0b"/>
-                <text x="52" y="30" text-anchor="middle">Raw Data</text>
+  <div class="section">
+    <h2>Data Sources</h2>
+    <ul>
+      <li>USGS DEM — Surface elevation & terrain derivatives</li>
+      <li>CalFire Fire Hazard Severity Zones (FHSZ)</li>
+      <li>LARIAC5 Building Footprints & Elevation</li>
+      <li>Fire history records for LA County, Ventura County, and Angeles National Forest</li>
+      <li>NOAA drought index records</li>
+    </ul>
+  </div>
 
-                <rect x="108" y="12" width="86" height="28" rx="6" fill="#eef2ff" stroke="#6366f1"/>
-                <text x="151" y="30" text-anchor="middle">Processing</text>
+  <div class="section">
+    <h2>Key Findings</h2>
+    <p>
+      • High-risk structures cluster heavily along Glendale’s eastern hillsides.<br>
+      • The steepest terrain (20°–90° slopes) strongly correlates with building risk categories 4–5.<br>
+      • Historical fire frequency indicates increased activity around suburban fringe zones.<br>
+      • Periods of severe drought align with regional spikes in acreage burned.
+    </p>
+  </div>
 
-                <rect x="208" y="12" width="96" height="28" rx="6" fill="#ecfccb" stroke="#84cc16"/>
-                <text x="256" y="30" text-anchor="middle">Risk Model</text>
+  <div class="section">
+    <h2>Model Summary (Non-Technical)</h2>
+    <p>
+      We computed fire risk using a point-based scoring framework: higher scores correspond to steeper slopes, 
+      southern-facing aspects, and high-vegetation hazard. Building risk is the combination of its terrain score 
+      and local exposure factors. Each structure is assigned a category from 1 (low) to 5 (extreme).
+    </p>
+  </div>
 
-                <rect x="108" y="66" width="196" height="36" rx="8" fill="#ffffff" stroke="#374151"/>
-                <text x="206" y="86" text-anchor="middle" font-weight="700">2D Dashboard → 3D Viewer</text>
-
-                <path d="M94 26 L108 26" stroke="#64748b" stroke-width="2"/>
-                <path d="M194 26 L208 26" stroke="#64748b" stroke-width="2"/>
-                <path d="M151 40 L151 66" stroke="#64748b" stroke-width="2" />
-              </g>
-            </svg>
-          </div>
-
-          <div class="card" style="margin-top:12px">
-            <h4 style="margin:0 0 8px 0">Data sources</h4>
-            <div class="small">
-              DEM (USGS), vegetation layers (CalFire), building footprints (LA county ARCGIS), Glendale boundry line (Glendale City Maps)
-              and historical fire perimeters (FRAP).
-            </div>
-          </div>
-        </aside>
-      </div>
+  <div class="section">
+    <h2>Explore the Project</h2>
+    <p>Choose a page to explore the dataset, model outputs, and interactive visual tools:</p>
+    <div class="nav-links">
+      <a href="interactive3d.html">3D Viewer</a>
+      <a href="dashboard.html">2D Dashboard</a>
+      <a href="https://github.com/AFD03/Glendale-Fire-Risk" target="_blank">GitHub Repo</a>
     </div>
-        
-        <footer>
+  </div>
+
+</div>
+
+<footer>
             <p>&copy; 2025 Glendale Fire Risk Project | UC Davis STA160 Team 3</p>
             <p>All data is public, government-sourced, and contains no personal or identifying information.</p>
         </footer>
