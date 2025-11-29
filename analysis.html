@@ -16,24 +16,50 @@
     --shadow: 0 8px 30px rgba(0,0,0,0.06);
   }
 
+ * { box-sizing: border-box; }
+
   body {
-    margin:0;
-    font-family: Inter, system-ui, sans-serif;
-    color: var(--text);
+    margin: 0;
+    font-family: "Inter", system-ui, sans-serif;
     background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
   }
 
-  .header {
-    padding: 40px 24px 20px;
-    text-align:center;
+  /* ===== Hero Section ===== */
+  .hero {
+    padding: 80px 20px 90px;
+    text-align: center;
+    background: radial-gradient(circle at top, #e1e5ff 0%, #f4f5ff 60%);
+    animation: fadeIn 0.8s ease;
   }
-  .header h1 {
-    margin:0;
-    font-size:2rem;
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
   }
-  .header p {
-    color:var(--muted);
-    margin-top:8px;
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #4a63d9, #5d7bff);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 800;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    color: var(--muted);
+    max-width: 760px;
+    margin: 12px auto;
+  }
+
+  /* ===== General Layout ===== */
+  .container {
+    max-width: 1100px;
+    padding: 40px 20px 100px;
+    margin: auto;
   }
 
   .section {
@@ -45,9 +71,16 @@
     animation: fadeIn 0.8s ease;
   }
 
-  .section h2 {
-    margin-top:0;
-    font-size:1.4rem;
+  h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #1d2c4d;
+  }
+
+  .section p,
+  .section li {
+    color: #374151;
+    font-size: 1.05rem;
   }
 
   iframe.chart {
@@ -191,7 +224,7 @@
 
 <footer>
   <p>&copy; 2025 Glendale Fire Risk Project — UC Davis STA160, Team 3</p>
-  <p>All data are public, government-sourced, and non-identifying.</p>
+  <p>All data is public, government-sourced, and non-identifying.</p>
 </footer>
   
 </body>
