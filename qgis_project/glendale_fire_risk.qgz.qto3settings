@@ -239,7 +239,7 @@
         "radioButton_IntersectingFeatures": true,
         "slider_FontSize": 3
       },
-      "visible": false
+      "visible": true
     },
     {
       "geomType": 3,
@@ -327,7 +327,7 @@
         "radioButton_IntersectingFeatures": true,
         "slider_FontSize": 3
       },
-      "visible": true
+      "visible": false
     },
     {
       "geomType": 2,
@@ -706,14 +706,14 @@
   "OPT": {
     "viewpoint": {
       "lookAt": {
-        "x": -13162831.579605717,
-        "y": 4053339.5757744266,
-        "z": 480.16051973615373
+        "x": -13162060.572790079,
+        "y": 4051831.019417772,
+        "z": 480.2271090916225
       },
       "pos": {
-        "x": -13157435.684698703,
-        "y": 4038173.0363748376,
-        "z": 1910.402908372215
+        "x": -13158450.892274845,
+        "y": 4036706.081194307,
+        "z": 1640.237035275533
       }
     }
   },
