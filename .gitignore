@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# mac ds store removal
+.DS_Store
+
 # C extensions
 *.so
 
