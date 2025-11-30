@@ -32,7 +32,11 @@ Glendale-Fire-Risk/
 │
 ├── README.md
 ├── .gitignore
-├── requirements.txt          # Python dependencies (for Dash app)
+├── LICENSE
+├── index.html            # base page for website
+├── analysis.html         # analysis page for website
+├── interactive.html      # 3D map page for website
+├── dashboard.html        # 2D map page for website
 │
 ├── data_raw/                 # Unmodified source datasets
 │   ├── buildings/
@@ -49,20 +53,13 @@ Glendale-Fire-Risk/
 │   └── exports_3d/           # qgis2threejs outputs here
 │
 ├── visualization/                 # 2D visuals
-│   ├── app.py
-│   ├── assets/               # CSS, logos, etc.
-│   ├── components/           # Custom UI components
+│   ├── interactive.html          
 │   └── data/                 # Processed GeoJSON for loading into Dash
 │
 ├── docs/                     # Final report, proposal, project documentation
-│   ├── project_plan.pdf
-│   ├── final_report/
-│   └── presentation/
-│
-└── scripts/                  # Optional automation scripts (Python/QGIS)
-    ├── clip_and_reproject.py
-    ├── build_risk_model.py
-    └── data_download_notes.md
+    ├── project_plan.pdf
+    ├── final_report/
+    └── presentation/
 ```
 
 ---
