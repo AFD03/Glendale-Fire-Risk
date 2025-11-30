@@ -128,6 +128,24 @@
     background: #fafaff;
     margin-top: 20px;
   }
+/* ===== Mobile Responsiveness ===== */
+  @media (max-width: 768px) {
+    
+    /* 1. Stack the grid columns vertically */
+    .supp-grid {
+      grid-template-columns: 1fr;
+    }
+
+    /* 2. Adjust padding so it doesn't look cramped on small screens */
+    .hero h1 { font-size: 1.7rem; }
+    .container { padding: 20px 15px; }
+    .section { padding: 20px; }
+
+    /* 3. (Optional) Adjust iframe height for mobile 
+       Sometimes shorter is better on mobile so users don't have to scroll forever */
+    iframe.chart { height: 400px; }
+    .supp-grid iframe { height: 400px; }
+  }
   
 </style>
 </head>
