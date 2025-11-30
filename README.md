@@ -7,21 +7,21 @@ This project visualizes wildfire risk in Glendale, California using GIS data, a 
 | Name | Major | Role |
 |------|-------|------|
 | Ruhi Aggarwal | Data Science | Risk Model, Integration |
-| **Alexander Davis*** | Statistics | Team Lead, Dashboard Dev, 3D Scene |
-| Alyssa Chau | Statistics/Mgmt Econ | GIS Analysis, Integration |
-| YiChun Chen | Data Science | GIS Processing, 3D Visualization |
-| Odin Nielsen | Statistics | Dashboard Dev, GIS Processing |
+| **Alexander Davis*** | Statistics | Team Lead, GIS Dev, 3D Scene, Website Build |
+| Alyssa Chau | Statistics/Mgmt Econ | Risk Model, Integration |
+| YiChun Chen | Data Science | 2D plotly charts |
+| Odin Nielsen | Statistics | 2D plotly sharts |
 | Zhichu Zheng | Statistics | GIS Data & Terrain Analysis |
 
 \*Team Leader
 
 ---
 
-## Goals & Deliverables
-- Interactive **2D Plotly Dash dashboard** showing building-level fire risk  
+## Deliverables
+- Interactive **2D dashboard** showing building-level fire risk  
 - Embedded **3D QGIS scene** (terrain, extruded buildings, risk overlay)  
 - Full data pipeline documentation & final report  
-- Comparison with CalFire Fire Hazard Severity Zones (FHSZ)
+- Supplemental 2D charts for contextualizing fire risk in Glendale, CA
 
 ---
 
@@ -33,7 +33,6 @@ Glendale-Fire-Risk/
 ├── README.md
 ├── .gitignore
 ├── requirements.txt          # Python dependencies (for Dash app)
-├── environment.yml           # (optional) Conda environment file
 │
 ├── data_raw/                 # Unmodified source datasets
 │   ├── buildings/
@@ -49,7 +48,7 @@ Glendale-Fire-Risk/
 ├── qgis_project/             # .qgz project file + related styles, exports
 │   └── exports_3d/           # qgis2threejs outputs here
 │
-├── dash_app/                 # Plotly Dash web application
+├── visualization/                 # 2D visuals
 │   ├── app.py
 │   ├── assets/               # CSS, logos, etc.
 │   ├── components/           # Custom UI components
@@ -86,7 +85,7 @@ All data is public, government-sourced, and contains no personal or identifying 
 |----------|------|
 | GIS Processing | QGIS (Slope, Aspect, Reclassification) |
 | 3D Visualization | QGIS + qgis2threejs Plugin |
-| Web App | Python, Plotly Dash |
+| Web App | Python, Leaflet |
 | Version Control | Git / GitHub |
 | Languages | Python, HTML/CSS |
 | Reproducibility | Saved QGIS project file + documented workflow |
@@ -112,27 +111,12 @@ Weights determined from CalFire research + sensitivity analysis.
 | Week 4 | Download & preprocess GIS data |
 | Week 5 | GIS analysis (slope, aspect, vegetation classification) |
 | Week 6 | Build and validate risk model |
-| Week 7 | Finalize GeoJSON + begin Dash app |
+| Week 7 | Finalize GeoJSON + begin 2D visuals |
 | Week 8 | Complete 2D dashboard + 3D scene |
 | Week 9 | Integration + report writing |
 | Week 10 | Final testing & presentation |
 
 ---
-
-## How to Run the Dash App (Coming Soon)
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/glendale-fire-risk.git
-cd glendale-fire-risk
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Run the Dash server
-cd dash_app
-python app.py
-```
 
 ## License
 This project uses only public data and is licensed under the MIT License.
