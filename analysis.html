@@ -88,7 +88,7 @@
     margin-top:18px;
     box-shadow:0 4px 16px rgba(0,0,0,0.08);
   }
-
+/*
 .supp-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -103,6 +103,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.06);
 }
+*/
 
   nav {
     text-align:center;
@@ -130,22 +131,14 @@
   }
 /* ===== Mobile Responsiveness ===== */
   @media (max-width: 768px) {
-    
-    /* 1. Stack the grid columns vertically */
-    .supp-grid {
-      grid-template-columns: 1fr;
-    }
 
     /* 2. Adjust padding so it doesn't look cramped on small screens */
     .hero h1 { font-size: 1.7rem; }
     .container { padding: 20px 15px; }
     .section { padding: 20px; }
 
-    /* 3. (Optional) Adjust iframe height for mobile 
-       Sometimes shorter is better on mobile so users don't have to scroll forever */
+    /* 3. (Optional) Adjust iframe height for mobile */
     iframe.chart { height: 400px; }
-    .supp-grid iframe { height: 400px; }
-  }
   
 </style>
 </head>
@@ -203,25 +196,20 @@
     The Glendale area is surrounded by three of California’s most fire-prone landscapes: 
     Los Angeles County wildlands, Ventura County fire corridors, and Angeles National Forest.
     These regions regularly experience large fires that impact Glendale's air quality, evacuation planning,
-    and building resilience needs.
+    and building resilience needs. LAC refers to LA county, VNC to Ventura county, and ANF to Angeles National Forest.
   </p>
 
   <!-- fire frequency Plotly HTML -->
-  <iframe class="chart" src="visualization/time_series.html"></iframe>
+  <iframe src="visualization/fire_history_interactive.html"></iframe>
 </div>
     
 <div class="section">
-  <h2>Additional Supplemental Visualizations</h2>
+  <h2>Total Burned Acres</h2>
   <p>
-    These charts were produced during exploratory analysis and provide additional context,
-    but are not central to our final building-level wildfire risk model. They are included here for reviewers
-    interested in the broader environmental patterns influencing the region. 
-    LAC refers to LA county, VNC to Ventura county, and ANF to Angeles National Forest.
+    To understand how the intensity of fires in Glendale has evolved, we aggregated total acres burned per decade across the three major fire protection units surrounding Glendale: Los Angeles County (LAC), Ventura County (VNC), and Angeles National Forest (ANF).
+    This visualization highlights how certain decades—especially the 1970s, 2000s, and 2010s—experienced exceptionally large burns. These long-term patterns help contextualize Glendale’s modern wildfire exposure, showing that the region has repeatedly faced large, high-intensity fire events that shape today’s risk landscape.
   </p>
-<div class="supp-grid">
-  <iframe src="visualization/fire_history_interactive.html"></iframe>
   <iframe src="visualization/fire_acres_decade_interactive.html"></iframe>
-</div>
 </div>
 
 <!-- Section 4 -->
