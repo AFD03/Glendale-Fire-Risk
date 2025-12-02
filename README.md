@@ -1,7 +1,7 @@
-# Glendale Fire Risk Interactive Visualization
+# 3D & 2D Visualization of Wildfire Risk in Glendale, CA
 
 ## Overview
-This project visualizes wildfire risk in Glendale, California using GIS data, a weighted risk model, and an interactive Plotly Dash web dashboard. It aims to help city planners, emergency services, and residents understand spatial patterns of fire vulnerability at the building level.
+This project visualizes wildfire risk in Glendale, California using GIS data, a weighted risk model, and an interactive Leaflet building map. It aims to help city planners, emergency services, and residents understand spatial patterns of fire vulnerability at the building level.
 
 ## Team – STA160 (Team 3)
 | Name | Major | Role |
@@ -50,11 +50,11 @@ Glendale-Fire-Risk/
 │   └── raster/
 │
 ├── qgis_project/             # .qgz project file + related styles, exports
-│   └── exports_3d/           # qgis2threejs outputs here
 │
-├── visualization/                 # 2D visuals
-│   ├── interactive.html          
-│   └── data/                 # Processed GeoJSON for loading into Dash
+├── visualization/         # 2D visuals
+│   ├── fire_risk_map         # qgis2threejs outputs here
+│   ├── .html plotly visualizations         
+│   └── .py code for plotly
 │
 ├── docs/                     # Final report, proposal, project documentation
     ├── project_plan.pdf
