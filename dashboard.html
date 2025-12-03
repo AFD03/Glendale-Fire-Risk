@@ -36,39 +36,126 @@
     from {opacity: 0; transform: translateY(10px);}
     to {opacity: 1; transform: translateY(0);}
   }
-  
-  #map { height: 600px; border-radius: 10px; margin: 20px; box-shadow:0 2px 12px rgba(0,0,0,0.1); }
+
+  /* Map wrapper so we can position legend on top */
+  .map-wrapper {
+    position: relative;
+    margin: 20px;
+  }
+
+  #map {
+    height: 650px;              /* a bit taller */
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
 
   .controls {
-    display:flex;
-    gap:10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     padding: 10px 20px;
+    align-items: center;
+  }
+
+  .controls-label {
+    font-weight: 600;
+    color: var(--muted);
+    margin-right: 4px;
   }
 
   button {
-    padding:8px 14px;
-    border:none;
-    background:#e5e7eb;
-    border-radius:6px;
-    cursor:pointer;
-    font-weight:600;
+    padding: 8px 14px;
+    border: none;
+    background: #e5e7eb;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #111827;
+    transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
   }
-  button.active { background:#d9464a; color:white; }
+
+  button:hover {
+    background: #d1d5db;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+
+  button.active {
+    background: #d9464a;
+    color: white;
+  }
+
+  .reset-btn {
+  background: white;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  font-weight: 500;
+    }
+
+  .reset-btn:hover {
+    background: #f3f4f6;
+  }
+
+  /* Summary text under the controls */
+  .summary {
+    padding: 0 20px 10px 20px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
 
   nav {
-    text-align:center;
-    padding:10px;
+    text-align: center;
+    padding: 10px;
   }
 
   nav a {
-    margin:0 12px;
-    font-weight:600;
-    color:var(--accent);
-    text-decoration:none;
+    margin: 0 12px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
   }
+
   nav a:hover {
-    text-decoration:underline;
+    text-decoration: underline;
   }
+
+  /* Legend box on top of the map */
+  .legend {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: rgba(255,255,255,0.95);
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: #111827;
+    box-shadow: var(--shadow);
+  }
+
+  .legend-title {
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .legend-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3px;
+  }
+
+  .swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .swatch.low    { background: #ffffb2; }
+  .swatch.mod    { background: #fecc5c; }
+  .swatch.high   { background: #fd8d3c; }
+  .swatch.vhigh  { background: #f03b20; }
+  .swatch.extreme{ background: #bd0026; }
 
   footer {
     padding: 35px;
@@ -91,26 +178,59 @@
   <a href="analysis.html">Analysis</a>
   <a href="https://github.com/AFD03/Glendale-Fire-Risk" target="_blank">GitHub</a>
 </nav>
-<div class="hero">
-<h2 style="padding: 20px 20px 0 20px;">2D Fire Risk Map (Building Footprints)</h2>
-<p style="padding: 0 20px; color:#555;">
-Use the filters below to highlight buildings based on fire-risk category.
-Click a building for detailed information.
-</p>
 
-<div class="controls">
-  <button onclick="showAll()">Show All</button>
-  <button onclick="filterRisk(4)">High Risk (4–5)</button>
-  <button onclick="filterRisk(5)">Extreme Only (5)</button>
+<div class="hero">
+  <h2 style="padding: 20px 20px 0 20px;">2D Fire Risk Map (Building Footprints)</h2>
+  <p style="padding: 0 20px; color:#555;">
+    Use the filters below to highlight higher-risk buildings.
+    Click any building to view its height, elevation, and fire-risk score.
+  </p>
+
+  <div class="controls">
+  <span class="controls-label">Filter buildings by risk:</span>
+  <button onclick="showAll(this)" class="active">Show All</button>
+  <button onclick="filterRisk(4, this)">High Risk (4–5)</button>
+  <button onclick="filterRisk(5, this)">Extreme Only (5)</button>
+
+  <!-- Spacer so reset doesn't feel grouped with filters -->
+  <span style="flex: 1 0 auto;"></span>
+
+  <button class="reset-btn" onclick="resetView()">Reset View</button>
 </div>
+
+  <div id="summary" class="summary">
+    Loading building data…
+  </div>
 </div>
-<div id="map"></div>
+
+<div class="map-wrapper">
+  <div id="map"></div>
+
+  <!-- Legend overlay -->
+  <div class="legend">
+    <div class="legend-title">Building Fire Risk</div>
+    <div class="legend-row">
+      <span class="swatch low"></span> <span>1 — Low</span>
+    </div>
+    <div class="legend-row">
+      <span class="swatch mod"></span> <span>2 — Moderate</span>
+    </div>
+    <div class="legend-row">
+      <span class="swatch high"></span> <span>3 — High</span>
+    </div>
+    <div class="legend-row">
+      <span class="swatch vhigh"></span> <span>4 — Very High</span>
+    </div>
+    <div class="legend-row">
+      <span class="swatch extreme"></span> <span>5 — Extreme</span>
+    </div>
+  </div>
+</div>
 
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-
 // ----------------------------
 // 1. Mapbox Basemaps
 // ----------------------------
@@ -151,14 +271,23 @@ const COLORS = {
   5: "#bd0026"
 };
 
-// ----------------------------
-// 4. Load Your GeoJSON
-// ----------------------------
+// Globals for building layer & counts
 let buildingLayer;
+let riskCounts = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0};
 
+// ----------------------------
+// 4. Load Buildings GeoJSON
+// ----------------------------
 fetch("buildings_glendale_4326.geojson")
   .then(res => res.json())
   .then(data => {
+    // Precompute counts by risk category
+    data.features.forEach(f => {
+      const r = f.properties["Fire Risk"];
+      if (riskCounts[r] !== undefined) {
+        riskCounts[r]++;
+      }
+    });
 
     buildingLayer = L.geoJSON(data, {
       style: feature => ({
@@ -169,7 +298,6 @@ fetch("buildings_glendale_4326.geojson")
       }),
       onEachFeature: (feature, layer) => {
         const p = feature.properties;
-
         layer.bindPopup(`
           <strong>Building ID:</strong> ${p.fid}<br>
           <strong>Fire Risk:</strong> ${p["Fire Risk"]}<br>
@@ -180,9 +308,13 @@ fetch("buildings_glendale_4326.geojson")
     }).addTo(map);
 
     map.fitBounds(buildingLayer.getBounds());
+
+    // Initial summary: show all
+    updateSummary("all");
   });
 
- // 6. Add Glendale Boundary out of filter
+// ----------------------------
+// 4b. Glendale Boundary
 // ----------------------------
 fetch("glendale_boundary_4326.geojson")
   .then(res => res.json())
@@ -198,29 +330,76 @@ fetch("glendale_boundary_4326.geojson")
     }).addTo(map);
   });
 
+// Helper to update summary text
+function updateSummary(mode) {
+  const el = document.getElementById("summary");
+  if (!el) return;
+
+  const total =
+    riskCounts[1] + riskCounts[2] + riskCounts[3] + riskCounts[4] + riskCounts[5];
+  const high = (riskCounts[4] || 0) + (riskCounts[5] || 0);
+  const extreme = riskCounts[5] || 0;
+
+  if (mode === "all") {
+    el.textContent =
+      `Showing all ${total.toLocaleString()} buildings ` +
+      `(High: ${high.toLocaleString()}, Extreme: ${extreme.toLocaleString()}).`;
+  } else if (mode === 4) {
+    el.textContent =
+      `Highlighting ${high.toLocaleString()} High + Extreme risk buildings (4–5) ` +
+      `out of ${total.toLocaleString()} total.`;
+  } else if (mode === 5) {
+    el.textContent =
+      `Highlighting ${extreme.toLocaleString()} Extreme risk buildings (5) ` +
+      `out of ${total.toLocaleString()} total.`;
+  }
+}
+
+// Helper to toggle active button styles
+function setActiveButton(btn) {
+  document
+    .querySelectorAll(".controls button")
+    .forEach(b => b.classList.toggle("active", b === btn));
+}
 
 // ----------------------------
 // 5. Filters
 // ----------------------------
-function showAll() {
-  buildingLayer.setStyle(f => ({
-    fillColor: COLORS[f.properties["Fire Risk"]],
-    fillOpacity: 0.85,
-    weight: 0.4,
-    color: "#333"
-  }));
+function showAll(btn) {
+  if (buildingLayer) {
+    buildingLayer.setStyle(f => ({
+      fillColor: COLORS[f.properties["Fire Risk"]],
+      fillOpacity: 0.85,
+      weight: 0.4,
+      color: "#333"
+    }));
+  }
+  if (btn) setActiveButton(btn);
+  updateSummary("all");
 }
 
-function filterRisk(minRisk) {
-  buildingLayer.setStyle(f => {
-    const r = f.properties["Fire Risk"];
-    return {
-      fillColor: COLORS[r],
-      fillOpacity: (r >= minRisk) ? 0.9 : 0.05,
-      weight: (r >= minRisk) ? 1.2 : 0.1,
-      color: (r >= minRisk) ? "#000" : "#999"
-    };
-  });
+function filterRisk(minRisk, btn) {
+  if (buildingLayer) {
+    buildingLayer.setStyle(f => {
+      const r = f.properties["Fire Risk"];
+      return {
+        fillColor: COLORS[r],
+        fillOpacity: (r >= minRisk) ? 0.9 : 0.05,
+        weight: (r >= minRisk) ? 1.2 : 0.1,
+        color: (r >= minRisk) ? "#000" : "#999"
+      };
+    });
+  }
+  if (btn) setActiveButton(btn);
+  updateSummary(minRisk);
+}
+
+function resetView() {
+  if (buildingLayer) {
+    map.fitBounds(buildingLayer.getBounds(), {
+      padding: [20, 20]
+    });
+  }
 }
 
 </script>
@@ -229,6 +408,7 @@ function filterRisk(minRisk) {
   <p>&copy; 2025 Glendale Fire Risk Project — UC Davis STA160, Team 3</p>
   <p>All data is public, government-sourced, and non-identifying.</p>
 </footer>
-  
+
 </body>
 </html>
+
