@@ -250,6 +250,7 @@ const basemapSat = L.tileLayer(
 // 2. Initialize Map
 // ----------------------------
 const map = L.map('map', {
+  preferCanvas: true, // for safari
   center: [34.18, -118.25], // Glendale estimated center
   zoom: 13,
   layers: [basemapStreet]
