@@ -50,7 +50,7 @@
   }
 
   .hero p {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: var(--muted);
     max-width: 760px;
     margin: 12px auto;
@@ -189,7 +189,7 @@
 
       <div class="feature-card">
         <h3>Vegetation & Fuel Layers</h3>
-        <p>Integrated high-resolution vegetation maps and FHSZ fire hazard classifications from CalFire.</p>
+        <p>Integrated high-resolution vegetation maps and Fire Hazard Severity Zones (FHSZ) from CAL FIRE.</p>
       </div>
 
       <div class="feature-card">
@@ -207,6 +207,11 @@
   <!-- ========== Data Sources ========== -->
   <div class="section">
     <h2>Data Sources</h2>
+      <p style="font-size: 0.95rem; color: #555;">
+        <b>Note on Terms:</b> DEM stands for <i>Digital Elevation Model</i>, a 3D representation of terrain.
+        FHSZ refers to <i>Fire Hazard Severity Zones</i> defined by CAL FIRE. WHR stands for
+        <i>Wildfire Hazard Risk</i>, a vegetation-based fire behavior classification.
+      </p>
     <ul>
       <li>USGS DEM — Terrain derivatives</li>
       <li>CalFire Vegetation (WHR13 Types)</li>
@@ -220,12 +225,12 @@
   <!-- ========== Key Findings ========== -->
   <div class="section">
     <h2>Key Findings</h2>
-    <p>
-      • High-risk structures cluster heavily across Glendale’s eastern hillsides.<br>
-      • Slopes above 20° and south-facing aspects are strong predictors of risk.<br>
-      • Fire frequency peaks around suburban fringe zones exposed to wind corridors.<br>
-      • Severe drought years correspond to spikes in total burned acreage.
-    </p>
+    <ul>
+        <li>High-risk structures cluster heavily across Glendale’s eastern hillsides.</li>
+        <li>Slopes above 20° and south-facing aspects are strong predictors of risk.</li>
+        <li>Fire frequency peaks around suburban fringe zones exposed to wind corridors.</li>
+        <li>Severe drought years correspond to spikes in total burned acreage.</li>
+    </ul>
   </div>
 
   <!-- ========== Model Summary ========== -->
@@ -236,7 +241,16 @@
       fuel exposure, and relative hazard from surrounding landscapes. The result is a terrain and building-level wildfire
       exposure map for Glendale.
     </p>
+
+      <p style="margin-top: 1.5rem; font-size: 1rem; color: #333;">
+        Together, these components form a unified risk assessment system that allows users to explore how
+        terrain, vegetation, and structural characteristics shape wildfire exposure across Glendale.
+        You can navigate to our 2D and 3D interactive maps to see how individual structures score within the city's
+        broader fire landscape.
+</p>
   </div>
+
+
 
   <!-- ========== Navigation Links ========== -->
   <div class="section">
