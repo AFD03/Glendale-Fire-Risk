@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Project Presentation — Glendale Fire Risk</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  :root {
+    --bg:#f4f5ff;
+    --card:#ffffff;
+    --text:#1f2937;
+    --muted:#6b7280;
+    --accent:#4a63d9;
+    --accent-soft:#eef0ff;
+    --shadow:0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  /* Reset */
+  * { box-sizing:border-box; margin:0; padding:0; }
+
+  body {
+    background:var(--bg);
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+    color:var(--text);
+    line-height:1.6;
+  }
+
+  /* NAVBAR */
+  nav {
+    text-align:center;
+    padding:16px;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  }
+  nav a {
+    margin:0 14px;
+    font-weight:600;
+    color:var(--accent);
+    text-decoration:none;
+    font-size:1rem;
+  }
+  nav a:hover {
+    text-decoration:underline;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    text-align:center;
+    padding:80px 20px 60px;
+    opacity:0;
+    animation: fadeInHero .08s forwards ease-out;
+  }
+
+  @keyframes fadeInHero {
+    from { opacity:0; transform: translateY(10px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+
+  .hero h1 {
+    font-size:2.6rem;
+    color:var(--accent);
+    margin-bottom:10px;
+    font-weight:700;
+  }
+
+  .hero p {
+    font-size:1.2rem;
+    color:var(--muted);
+    max-width:800px;
+    margin:0 auto;
+  }
+
+  /* VIDEO CARD */
+  .video-section {
+    max-width:900px;
+    margin:40px auto;
+    background:var(--card);
+    padding:28px;
+    border-radius:14px;
+    box-shadow:var(--shadow);
+  }
+
+  .video-section h2 {
+    margin-bottom:12px;
+    color:#1d2c4d;
+    text-align:center;
+  }
+
+  /* Responsive video container */
+  .video-wrapper {
+    position:relative;
+    padding-bottom:56.25%; /* 16:9 ratio */
+    height:0;
+    overflow:hidden;
+    border-radius:12px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.10);
+  }
+  .video-wrapper iframe {
+    position:absolute;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    border:none;
+  }
+
+  footer {
+    padding:40px;
+    text-align:center;
+    color:var(--muted);
+    font-size:0.95rem;
+    margin-top:40px;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="interactive.html">3D Map</a>
+  <a href="dashboard.html">2D Dashboard</a>
+  <a href="analysis.html">Analysis</a>
+  <a href="https://github.com/AFD03/Glendale-Fire-Risk" target="_blank">GitHub</a>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Project Presentation</h1>
+  <p>Watch our walkthrough of the wildfire-risk model, GIS workflow, and deployed website tools.</p>
+</section>
+
+
+<!-- VIDEO PLAYER CARD -->
+<div class="video-section">
+  <h2>Recorded Presentation</h2>
+
+  <div class="video-wrapper">
+    <!-- EMBEDED GOOGLE DRIVE VIDEO -->
+    <iframe
+      src="https://drive.google.com/file/d/1cG0PAHl8EU2h5UKTqzQHTnvgFlEuQ2ug/preview"
+      allow="autoplay"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 Glendale Fire Risk Project — UC Davis STA160 Team 3</p>
+  <p>All data is public, government-sourced, and non-identifying.</p>
+</footer>
+
+</body>
+</html>
