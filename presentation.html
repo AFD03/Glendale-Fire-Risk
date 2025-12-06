@@ -16,22 +16,20 @@
     --shadow: 0 8px 30px rgba(0,0,0,0.06);
   }
 
-  /* Reset */
-  * { box-sizing:border-box; margin:0; padding:0; }
+ * { box-sizing: border-box; }
 
   body {
-    background:var(--bg);
-    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-    color:var(--text);
-    line-height:1.6;
+    margin: 0;
+    font-family: "Inter", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
   }
 
-  /* HERO SECTION */
+  /* ===== Hero Section ===== */
   .hero {
-    text-align:center;
-    padding:80px 20px 60px;
+    padding: 30px 20px 10px 20px;
     text-align: center;
-    background: radial-gradient(circle at top, #e1e5ff 0%, #f4f5ff 60%);
     animation: fadeIn 0.8s ease;
   }
 
@@ -41,33 +39,17 @@
   }
 
   .hero h1 {
-    font-size:2.6rem;
-    color:var(--accent);
-    margin-bottom:10px;
-    font-weight:700;
+    margin: 0;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #111827;
   }
 
   .hero p {
-    font-size:1.2rem;
-    color:var(--muted);
-    max-width:800px;
-    margin:0 auto;
-  }
-
-  /* NAVBAR */
-  nav {
-    text-align:center;
-    padding:10px;
-  }
-
-  nav a {
-    margin:0 12px;
-    font-weight:600;
-    color:var(--accent);
-    text-decoration:none;
-  }
-  nav a:hover {
-    text-decoration:underline;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4b5563;
+    margin-bottom: 18px;
   }
 
   /* VIDEO CARD */
@@ -103,6 +85,21 @@
     border:none;
   }
 
+  nav {
+    text-align:center;
+    padding:10px;
+  }
+
+  nav a {
+    margin:0 12px;
+    font-weight:600;
+    color:var(--accent);
+    text-decoration:none;
+  }
+  nav a:hover {
+    text-decoration:underline;
+  }
+
   footer {
     padding: 35px;
     text-align: center;
@@ -127,10 +124,10 @@
 
 
 <!-- HERO -->
-<section class="hero">
+<div class="hero">
   <h1>Project Presentation</h1>
   <p>Watch our walkthrough of the wildfire-risk model, GIS workflow, and deployed website tools.</p>
-</section>
+</div>
 
 
 <!-- VIDEO PLAYER CARD -->
